@@ -1,0 +1,63 @@
+/* Container for the section */
+.container {
+  padding: 2rem;
+  text-align: center;
+  color: #333;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* First div (intro) styling */
+
+/* Second div (columns) styling */
+.columns {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Individual column styling */
+.column {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  padding: 1.5rem 0.5rem;
+  text-align: center;
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for each column */
+.column:hover {
+  transform: translateY(-5px);
+}
+
+/* Icon styling */
+.icon {
+  background-color: #d3d3d3;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* Text within each column */
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .column {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .column {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

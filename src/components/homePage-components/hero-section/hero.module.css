@@ -11,10 +11,12 @@
   background-size: cover;
   background-position: center;
   color: white;
+  border-radius: 16px;
 }
 
 /* Overlay for background image */
 .overlay {
+  border-radius: 16px;
   position: absolute;
   top: 0;
   left: 0;
