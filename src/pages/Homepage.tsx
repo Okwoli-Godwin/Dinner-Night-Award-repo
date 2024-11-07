@@ -1,9 +1,11 @@
-import Button from "../components/button/Button";
-import Container from "../components/container/Container";
-import Typography from "../components/typography/Typography";
+import Hero from "../components/homePage-components/hero-section/Hero";
 
 const Homepage = () => {
-  return <></>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 };
 
 export default Homepage;

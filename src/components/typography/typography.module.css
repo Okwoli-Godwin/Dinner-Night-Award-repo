@@ -90,3 +90,16 @@ p {
     font-size: 0.875rem;
   }
 }
+@media (max-width: 480px) {
+  .h1 {
+    font-size: 3rem;
+  }
+
+  .h2 {
+    font-size: 1.7rem;
+  }
+
+  .h3 {
+    font-size: 1.2rem;
+  }
+}
