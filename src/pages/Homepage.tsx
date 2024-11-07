@@ -1,3 +1,4 @@
+import EventCallToAction from "../components/homePage-components/event-call-action/EventCallToAction";
 import Hero from "../components/homePage-components/hero-section/Hero";
 import IntroSection from "../components/homePage-components/introduction/Introduction";
 import ShopWithSponsors from "../components/homePage-components/shop-with-sponsor/ShopWithSponsor";
@@ -10,6 +11,7 @@ const Homepage = () => {
       <WhatToExpect />
       <IntroSection />
       <ShopWithSponsors />
+      <EventCallToAction />
     </>
   );
 };
