@@ -24,9 +24,13 @@ const ShopWithSponsors: React.FC = () => {
         </div>
 
         <div className={styles.textContainer}>
-          <Typography variant="h3">Eco-Friendly Skincare Brand</Typography>
-          <Typography variant="h6">Nature’s Care in Every Drop.</Typography>
-          <Typography variant="body">
+          <Typography variant="h5" className={styles.textHeader}>
+            Eco-Friendly Skincare Brand
+          </Typography>
+          <Typography variant="h6" className={styles.h6}>
+            Nature’s Care in Every Drop.
+          </Typography>
+          <Typography variant="body" className={styles.textDetails}>
             At EFSB, we harness the power of nature to create skincare products
             that are as kind to your skin as they are to the environment. Our
             commitment to sustainable, toxin-free ingredients is at the heart of
