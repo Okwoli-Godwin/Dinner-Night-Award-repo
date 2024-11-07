@@ -20,32 +20,32 @@ const WhatToExpect: React.FC = () => {
           <div className={styles.icon}>{/* <Icon name="home" /> */}</div>
           <Typography variant="h4">Exclusive Dinner</Typography>
           <Typography variant="body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            lacinia odio vitae.
+            Indulge in a gourmet dining experience curated by top chefs,
+            designed to delight your senses.
           </Typography>
         </div>
         <div className={styles.column}>
           <div className={styles.icon}></div>
           <Typography variant="h4">Award Ceremony</Typography>
           <Typography variant="body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            lacinia odio vitae.
+            Celebrate excellence as we honor standout individuals and
+            organizations in various fields.
           </Typography>
         </div>
         <div className={styles.column}>
           <div className={styles.icon}></div>
           <Typography variant="h4">Business Networking</Typography>
           <Typography variant="body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            lacinia odio vitae.
+            Connect with industry leaders and like-minded professionals to
+            expand your network.
           </Typography>
         </div>
         <div className={styles.column}>
           <div className={styles.icon}></div>
           <Typography variant="h4">Entertainment</Typography>
           <Typography variant="body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            lacinia odio vitae.
+            Indulge in a gourmet dining experience curated by top chefs,
+            designed to delight your senses.
           </Typography>
         </div>
       </div>
