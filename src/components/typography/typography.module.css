@@ -1,0 +1,92 @@
+/* Base font size */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+/* Font families */
+h1 {
+  font-family: "EB Garamond", serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Font sizes */
+.h1 {
+  font-size: 6rem;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  color: #d8b300;
+}
+
+.h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.h3 {
+  font-size: 2rem;
+}
+
+.h4 {
+  font-size: 1.5rem;
+}
+
+.h5 {
+  font-size: 1.25rem;
+}
+
+.h6 {
+  font-size: 1rem;
+}
+
+.body {
+  font-size: 1rem;
+}
+
+/* Responsive font sizing */
+@media (max-width: 768px) {
+  .h1 {
+    font-size: 3.5rem;
+  }
+
+  .h2 {
+    font-size: 2rem;
+  }
+
+  .h3 {
+    font-size: 1.5rem;
+  }
+
+  .h4 {
+    font-size: 1.25rem;
+  }
+
+  .h5 {
+    font-size: 1rem;
+  }
+
+  .h6 {
+    font-size: 0.875rem;
+  }
+
+  .body {
+    font-size: 0.875rem;
+  }
+}
