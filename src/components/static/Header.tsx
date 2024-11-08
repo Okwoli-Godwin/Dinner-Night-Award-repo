@@ -178,7 +178,7 @@ const Header: React.FC = () => {
           Gallery
         </NavLink>
         <div className={styles.buttonGroup}>
-          <Button variant="outline" text="Sign In"></Button>
+          <Button variant="special" text="Sign In"></Button>
           <Button variant="primary" text="Get Ticket"></Button>
         </div>
       </nav>

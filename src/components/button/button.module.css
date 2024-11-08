@@ -34,6 +34,14 @@
 .outline:hover {
   background-color: #443d1c73;
 }
+.special {
+  background-color: transparent;
+  border: 0.1rem solid #333;
+  color: #000;
+}
+.special:hover {
+  background-color: #443d1c73;
+}
 
 /* Sizes */
 .small {
