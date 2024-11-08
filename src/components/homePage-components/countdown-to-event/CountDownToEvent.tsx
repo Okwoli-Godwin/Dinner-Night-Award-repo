@@ -64,8 +64,10 @@ const CountDownToEvent: React.FC = () => {
             </div>
 
             <div className={styles.details_container}>
-              <Typography variant="h4">{item.header} </Typography>
-              <Typography variant="h5" className={styles.description}>
+              <Typography variant="h3" className={styles.item_header}>
+                {item.header}{" "}
+              </Typography>
+              <Typography variant="body" className={styles.description}>
                 {/* Replace with actual descriptions */}
                 {item.body}
               </Typography>

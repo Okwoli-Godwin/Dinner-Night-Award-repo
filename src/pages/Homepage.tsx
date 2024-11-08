@@ -14,7 +14,7 @@ const Homepage = () => {
       <IntroSection />
       <ShopWithSponsors />
       <EventCallToAction />
-      {/* <CountDownToEvent /> */}
+      <CountDownToEvent />
     </>
   );
 };
