@@ -4,6 +4,18 @@
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+}
+
+.activities::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, 50%);
+  color: #d8b300;
+  height: 50px;
+  z-index: 2;
 }
 
 /* Header styling */

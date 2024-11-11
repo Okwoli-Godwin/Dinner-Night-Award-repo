@@ -43,6 +43,13 @@
   background-color: #443d1c73;
 }
 
+.special2 {
+  background-color: #d8b300;
+  color: #ffffff;
+}
+.special2:hover {
+  background-color: #d8b40073;
+}
 /* Sizes */
 .small {
   padding: 0.25rem 0.5rem;
@@ -67,10 +74,27 @@
 }
 
 /* Responsive design */
+
+@media (max-width: 768px) {
+  .special {
+    border: none;
+    font-size: 1.2rem;
+  }
+
+  .special2 {
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: black;
+  }
+}
 @media (max-width: 600px) {
   /* 600px */
   .button {
     font-size: 0.875rem;
     padding: 0.375rem 0.75rem;
+  }
+  .special,
+  .special2 {
+    font-size: 1.2rem;
   }
 }
