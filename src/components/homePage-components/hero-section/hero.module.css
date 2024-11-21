@@ -67,6 +67,9 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .hero {
+    border-radius: 5px;
+  }
   .countdown {
     font-size: 1rem;
   }

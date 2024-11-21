@@ -33,6 +33,7 @@
 @media (max-width: 768px) {
   .container {
     padding: 1.5rem 2rem;
+    border-radius: 5px;
   }
 
   .details {
