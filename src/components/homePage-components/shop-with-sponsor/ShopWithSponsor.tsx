@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "../../typography/Typography";
 import Button from "../../button/Button";
 import styles from "./shopWithSponsors.module.css";
-import SponsorImage from "../../../../public/sponsor-image.png";
+import SponsorImage from "../../../images/sponsor-image.png";
 
 const ShopWithSponsors: React.FC = () => {
   return (

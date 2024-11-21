@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "../../typography/Typography";
 import styles from "./introduction.module.css";
-import DinnerImage from "../../../../public/intro-image.png";
+import DinnerImage from "../../../images/intro-image.png";
 
 const IntroSection: React.FC = () => {
   return (

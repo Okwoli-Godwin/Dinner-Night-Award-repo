@@ -10,14 +10,20 @@ import {
   FaTiktok,
   FaTwitter,
 } from "react-icons/fa";
-import FooterLogo from "../../../public/cyonlogo.png";
+import FooterLogo from "../../images/cyonlogo.png";
+// import FooterLogo from '../../images/c'
 
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       {/* Div A: Logo and Text */}
       <div className={styles.footerSection}>
-        <img src={FooterLogo} alt="logo" className={styles.logo} />
+        <img
+          loading="eager"
+          src={FooterLogo}
+          alt="logo"
+          className={styles.logo}
+        />
         <Typography variant="h6">
           Catholic Youth Of Nigeria (CYON), Lagos.
         </Typography>

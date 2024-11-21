@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Hero.module.css";
+import styles from "./hero.module.css";
 import Typography from "../../typography/Typography";
 import Button from "../../button/Button";
 import Countdown from "../countdown/Countdown";

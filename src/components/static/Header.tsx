@@ -1,7 +1,8 @@
 import Button from "../button/Button";
 import Typography from "../typography/Typography";
 // import { NavLink } from "react-router-dom";
-import CyonLogo from "../../../public/cyonlogo 1.png";
+import CyonLogo from "../../images/cyonlogo1.png";
+// import cyo from '../../images'
 
 import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
