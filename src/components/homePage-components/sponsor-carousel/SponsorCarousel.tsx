@@ -33,32 +33,42 @@
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, FreeMode } from "swiper/modules";
 // import 'swiper/css';
+import ShopWithSponsors from "../shop-with-sponsor/ShopWithSponsor";
+import "swiper/css";
+// import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import styles from "./SimpleSwiper.module.css";
+// import styles from "./SimpleSwiper.module.css";
 
-const SimpleSwiper: React.FC = () => {
+const SponsorCarousel: React.FC = () => {
   return (
     <Swiper
-      modules={[Navigation, Pagination]}
+      modules={[Navigation, Pagination, FreeMode, Autoplay]}
       spaceBetween={30}
+      freeMode={true}
       slidesPerView={1}
-      navigation
       pagination={{ clickable: true }}
-      className={styles.swiper}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      navigation
+      // pagination={{ clickable: true }}
+      // autoplay={true}
+      // className={styles.swiper}
     >
-      <SwiperSlide className={styles.slide}>
-        <div>Slide 1: Welcome to the event!</div>
+      <SwiperSlide>
+        <ShopWithSponsors />
       </SwiperSlide>
-      <SwiperSlide className={styles.slide}>
-        <div>Slide 2: Enjoy the dinner and awards!</div>
+      <SwiperSlide>
+        <ShopWithSponsors />
       </SwiperSlide>
-      <SwiperSlide className={styles.slide}>
-        <div>Slide 3: Stay tuned for exciting activities!</div>
+      <SwiperSlide>
+        <>
+          <ShopWithSponsors />
+        </>
       </SwiperSlide>
     </Swiper>
   );
 };
 
-export default SimpleSwiper;
+export default SponsorCarousel;

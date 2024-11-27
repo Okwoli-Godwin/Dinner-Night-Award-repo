@@ -5,6 +5,7 @@ import Hero from "../components/homePage-components/hero-section/Hero";
 import IntroSection from "../components/homePage-components/introduction/Introduction";
 // import ShopWithSponsors from "../components/homePage-components/shop-with-sponsor/ShopWithSponsor";
 import ShopWithSponsors from "../components/homePage-components/shop-with-sponsor/ShopWithSponsor";
+import SponsorCarousel from "../components/homePage-components/sponsor-carousel/SponsorCarousel";
 import WhatToExpect from "../components/homePage-components/what-to-expect/WhatToExpect";
 
 const Homepage = () => {
@@ -15,7 +16,8 @@ const Homepage = () => {
       <IntroSection />
       <ShopWithSponsors />
       <EventCallToAction />
-      {/* <CountDownToEvent /> */}
+      <SponsorCarousel />
+
       <EventWeekSection />
     </>
   );
