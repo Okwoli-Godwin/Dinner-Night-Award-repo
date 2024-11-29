@@ -1,4 +1,4 @@
-import CountDownToEvent from "../components/homePage-components/countdown-to-event/CountDownToEvent";
+// import CountDownToEvent from "../components/homePage-components/countdown-to-event/CountDownToEvent";
 import EventCallToAction from "../components/homePage-components/event-call-action/EventCallToAction";
 import EventWeekSection from "../components/homePage-components/event-week/EventWeekSection";
 import Hero from "../components/homePage-components/hero-section/Hero";
