@@ -38,17 +38,24 @@
   background-color: transparent;
   border: 0.1rem solid #333;
   color: #000;
+  transition: all 0.3s ease;
 }
 .special:hover {
-  background-color: #443d1c73;
+  color: white;
+  background-color: #d8b300;
+  border-color: transparent;
+  transform: scale(1.09);
 }
 
 .special2 {
+  transition: all 0.3s ease;
   background-color: #d8b300;
   color: #ffffff;
 }
 .special2:hover {
-  background-color: #d8b40073;
+  transform: scale(1.09);
+  background-color: #d8b400;
+  /* border-color: black; */
 }
 /* Sizes */
 .small {

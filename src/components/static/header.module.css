@@ -38,6 +38,13 @@
   font-size: 1rem;
   color: #333;
   text-decoration: none;
+  transition: all 0.3s;
+}
+
+.navLink:hover {
+  transform: translateY(-12px);
+  transform: scale(1.09);
+  color: #d8b300;
 }
 
 .activeNavLink {

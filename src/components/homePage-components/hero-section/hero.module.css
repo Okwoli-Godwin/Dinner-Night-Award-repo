@@ -11,6 +11,7 @@
   background-image: url("../../../images/hero-bg.webp"); /* Replace with your image path */
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: white;
   border-radius: 16px;
 }
