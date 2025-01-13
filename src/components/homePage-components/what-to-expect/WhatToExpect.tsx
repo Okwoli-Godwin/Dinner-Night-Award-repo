@@ -49,16 +49,16 @@ const WhatToExpect: React.FC = () => {
               <path
                 d="M8.06138 15.1653C8.06138 18.7233 9.47477 22.1355 11.9906 24.6514C14.5065 27.1672 17.9187 28.5806 21.4767 28.5806C25.0347 28.5806 28.4469 27.1672 30.9628 24.6514C33.4786 22.1355 34.892 18.7233 34.892 15.1653C34.892 11.6074 33.4786 8.19512 30.9628 5.67926C28.4469 3.1634 25.0347 1.75 21.4767 1.75C17.9187 1.75 14.5065 3.1634 11.9906 5.67926C9.47477 8.19512 8.06138 11.6074 8.06138 15.1653Z"
                 stroke="#353535"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M21.4766 28.5806L29.0786 41.75L32.6515 34.5214L40.6963 35.0401L33.0943 21.873M9.85445 21.873L2.25244 35.0424L10.2972 34.5214L13.8701 41.7478L21.4721 28.5806"
                 stroke="#353535"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>
@@ -101,22 +101,22 @@ const WhatToExpect: React.FC = () => {
               <path
                 d="M11.7883 21.5766C17.1944 21.5766 21.5766 17.1944 21.5766 11.7883C21.5766 6.38222 17.1944 2 11.7883 2C6.38222 2 2 6.38222 2 11.7883C2 17.1944 6.38222 21.5766 11.7883 21.5766Z"
                 stroke="#353535"
-                stroke-width="3"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeLinejoin="round"
               />
               <path
                 d="M21.5769 12.9647C21.5906 12.9784 26.1995 18.7744 35.4038 30.3526C35.5597 30.5403 35.6399 30.7794 35.6287 31.0232C35.6174 31.2669 35.5156 31.4976 35.3431 31.6701L31.3456 35.6677C31.173 35.8402 30.9423 35.942 30.6986 35.9532C30.4549 35.9645 30.2157 35.8843 30.0281 35.7284L13.572 21.5765M22.0369 22.0365L24.806 24.8056"
                 stroke="#353535"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M12.7671 41.2374C14.6439 38.7923 16.9245 37.5697 19.6091 37.5697C23.638 37.5697 28.3922 42.6303 32.4475 41.9343C36.5037 41.2374 37.6646 37.2379 35.1686 35.0238"
                 stroke="#353535"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>

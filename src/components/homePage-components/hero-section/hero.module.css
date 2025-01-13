@@ -8,12 +8,12 @@
   justify-content: center;
   height: 80vh;
 
-  background-image: url("../../../images/hero-bg.webp"); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: white;
   border-radius: 16px;
+  transition: all 0.4s ease-in-out;
 }
 
 /* Overlay for background image */
@@ -52,7 +52,7 @@
 }
 
 .buttonContainer {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 /* Button styling */
@@ -71,6 +71,8 @@
 @media (max-width: 768px) {
   .hero {
     border-radius: 5px;
+    /* background-size: contain; */
+    /* background-size: contain; */
   }
   .countdown {
     font-size: 1rem;
@@ -78,6 +80,11 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    border-radius: 5px;
+    /* background-size: contain; */
+    background-size: cover;
+  }
   .content {
     margin-top: 2rem;
   }
