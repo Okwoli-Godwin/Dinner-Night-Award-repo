@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
           </Typography>
 
           <div className={styles.buttonContainer}>
-            <Button text="Get Ticket Now" variant="primary" />
+            <Button text="Get Ticket Now" variant="primary" size="large" />
           </div>
           <div className={styles.countdown}>
             <>

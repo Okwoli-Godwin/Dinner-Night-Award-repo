@@ -13,8 +13,12 @@
 .primary {
   background-color: #d8b300;
   color: #ffffff;
+  transition: all 0.4s ease;
+  /* font-size: ; */
 }
 .primary:hover {
+  /* transform: translateY(10); */
+  transform: scale(1.1);
   background-color: #d8b40073;
 }
 
@@ -70,7 +74,7 @@
 
 .large {
   padding: 0.75rem 1.5rem;
-  font-size: 1.125rem;
+  font-size: 1.4rem;
 }
 
 /* Disabled state */
@@ -102,6 +106,11 @@
   }
   .special,
   .special2 {
+    font-size: 1.2rem;
+  }
+
+  .large {
+    /* padding: 0.75rem 1.5rem; */
     font-size: 1.2rem;
   }
 }
