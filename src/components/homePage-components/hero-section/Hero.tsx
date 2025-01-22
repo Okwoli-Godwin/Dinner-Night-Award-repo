@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % backgroundImages.length
       );
-      console.log(currentImageIndex);
+      // console.log(currentImageIndex);
     }, 4000);
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
