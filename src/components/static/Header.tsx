@@ -100,7 +100,7 @@ const Header: React.FC = () => {
         </NavLink>
         <div className={styles.buttonGroup}>
           <Button variant="special" text="Sign In"></Button>
-          <Button variant="special2" text="Get Ticket"></Button>
+          <Button variant="special2" text="Get Ticket" ></Button>
         </div>
       </nav>
 

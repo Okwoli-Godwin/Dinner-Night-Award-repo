@@ -14,7 +14,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button className={`${styles.button} ${styles[variant]} ${styles[size]}`}>
-      {text}
+      {text} 
     </button>
   );
 };
