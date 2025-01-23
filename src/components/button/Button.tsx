@@ -1,22 +1,20 @@
-import React from "react";
-import styles from "./button.module.css";
+import type React from "react"
+import styles from "./Button.module.css"
 
 type ButtonProps = {
-  text: string;
-  variant?: "primary" | "secondary" | "outline" | "special" | "special2";
-  size?: "small" | "medium" | "large";
-};
+  text: string
+  variant?: "primary" | "secondary" | "outline" | "special" | "special2"
+  size?: "small" | "medium" | "large"
+  onClick?: () => void
+}
 
-const Button: React.FC<ButtonProps> = ({
-  text,
-  variant = "primary",
-  size = "medium",
-}) => {
+const Button: React.FC<ButtonProps> = ({ text, variant = "primary", size = "medium", onClick }) => {
   return (
-    <button className={`${styles.button} ${styles[variant]} ${styles[size]}`}>
+    <button className={`${styles.button} ${styles[variant]} ${styles[size]}`} onClick={onClick}>
       {text}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
+

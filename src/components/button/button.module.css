@@ -40,7 +40,7 @@
 }
 .special {
   background-color: transparent;
-  border: 0.1rem solid #333;
+  border: 0.1rem solid #d8b300;
   color: #000;
   transition: all 0.3s ease;
 }
@@ -53,7 +53,7 @@
 
 .special2 {
   transition: all 0.3s ease;
-  background-color: #d8b300;
+  background-color: #0C8F54;
   color: #ffffff;
 }
 .special2:hover {

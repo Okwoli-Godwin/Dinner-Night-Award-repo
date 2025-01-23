@@ -1,22 +1,19 @@
 import React from "react";
 import Typography from "../../typography/Typography";
-import styles from "./introduction.module.css";
-import DinnerImage from "../../../images/intro-image.png";
+import img from "../../../images/dinner2.jpg"
+import img2 from "../../../images/award2.jpg"
+import img3 from "../../../images/rename1.jpg"
+import img4 from "../../../images/rename2.jpg"
 
 const IntroSection: React.FC = () => {
   return (
-    <section className={styles.container}>
-      {/* First div with an image */}
-      <div className={styles.imageContainer}>
-        <img src={DinnerImage} alt="Elegant Event" className={styles.image} />
-      </div>
+    <section className="w-[100%] flex justify-between items-center pl-[40px] pr-[40px] mt-[100px]">
 
-      {/* Second div with text content */}
-      <div className={styles.textContainer}>
-        <Typography variant="h6">Our Introduction</Typography>
+      <div className="w-[60%] flex flex-col">
         <Typography variant="h2">
-          Welcome to an Evening of Elegance and Celebration
+          You're invited to an Evening of Elegance and Celebration
         </Typography>
+        <div className="mt-[20px]">
         <Typography variant="body">
           Join us for a night to remember, where elegance meets excitement. The
           [Event Name] Dinner & Awards Night offers a luxurious atmosphere, a
@@ -26,7 +23,24 @@ const IntroSection: React.FC = () => {
           achievements. Don’t miss the chance to enjoy an unforgettable evening
           among peers and friends.
         </Typography>
+        </div>
       </div>
+
+      <div className="w-[37%] flex flex-wrap justify-between">
+        <div className="h-[200px] w-[48%] mb-[15px] rounded-[15px] overflow-hidden">
+          <img src={img} alt="" className="w-[100%] h-[100%] object-cover"/>
+        </div>
+        <div className="h-[200px] w-[48%] mb-[15px] rounded-[15px] overflow-hidden">
+          <img src={img2} alt="" className="w-[100%] h-[100%] object-cover"/>
+        </div>
+        <div className="h-[200px] w-[48%] rounded-[15px] overflow-hidden">
+          <img src={img3} alt="" className="w-[100%] h-[100%] object-cover"/>
+        </div>
+        <div className="h-[200px] w-[48%] rounded-[15px] overflow-hidden">
+         <img src={img4} alt="" className="w-[100%] h-[100%] object-cover"/>
+        </div>
+      </div>
+      
     </section>
   );
 };

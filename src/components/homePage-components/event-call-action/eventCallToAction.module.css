@@ -1,13 +1,15 @@
 /* Container styling for the centered text and buttons */
 .container {
   text-align: center;
-  padding: 2rem 3rem;
   max-width: 1000px;
   margin: 3rem auto 0;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background-color: #333;
+  background-image: url("../../../images/celebration.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: #ffffff;
   border-radius: 20px;
 }
@@ -19,7 +21,7 @@
 
 .details {
   width: 70%;
-  margin: 0 auto;
+  margin-top: 20px;
 }
 
 /* Button container styling */
@@ -27,6 +29,7 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
+  margin-top: 20px;
 }
 
 /* Responsive adjustments */
