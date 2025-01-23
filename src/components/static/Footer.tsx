@@ -16,7 +16,8 @@ import FooterLogo from "../../images/cyonlogo.png";
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      {/* Div A: Logo and Text */}
+      <div className="w-[100%] h-[100%] bg-[#000000d3] flex justify-around p-[40px]">
+        {/* Div A: Logo and Text */}
       <div className={styles.footerSection}>
         <img
           loading="eager"
@@ -27,21 +28,21 @@ const Footer: React.FC = () => {
         <Typography variant="h6">
           Catholic Youth Of Nigeria (CYON), Lagos.
         </Typography>
-        <Typography variant="body">Our Lady Of The Rosary (OLR).</Typography>
+        <Typography variant="body2">Our Lady Of The Rosary (OLR).</Typography>
       </div>
 
       {/* Div B: Contact and Social Icons */}
       <div className={styles.footerSection}>
-        <Typography variant="h6">Contact Us</Typography>
+        <Typography variant="h4">Contact Us</Typography>
 
         <div className={styles.contactItem}>
-          <FaWhatsapp />
-          <Typography variant="body">+234 808 182 5445</Typography>
+          <FaWhatsapp className="mr-[15px]" size={18}/>
+          <Typography variant="body2">+234 808 182 5445</Typography>
         </div>
 
         <div className={styles.contactItem}>
-          <FaPhone />
-          <Typography variant="body">+234 903 927 7687</Typography>
+          <FaPhone className="mr-[15px]" size={18}/>
+          <Typography variant="body2">+234 903 927 7687</Typography>
         </div>
 
         <div className={styles.socialIcons}>
@@ -51,6 +52,7 @@ const Footer: React.FC = () => {
           <FaTiktok />
           <FaTwitter />
         </div>
+      </div>
       </div>
     </footer>
   );
