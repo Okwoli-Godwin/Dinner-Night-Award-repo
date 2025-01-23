@@ -3,10 +3,19 @@ import Typography from "../../typography/Typography";
 import Button from "../../button/Button";
 import styles from "./shopWithSponsors.module.css";
 import SponsorImage from "../../../images/sponsor-image.png";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../framer-motion/Variant";
 
 const ShopWithSponsors: React.FC = () => {
   return (
-    <section className={styles.container}>
+    <motion.section
+      variants={fadeIn()}
+      initial="hidden"
+      whileInView="show"
+      exit="hidden"
+      viewport={{ once: true }}
+      className={styles.container}
+    >
       {/* Div A: Sponsored Businesses and Shop with Our Sponsors */}
       <div className={styles.header}>
         <Typography variant="h5">Sponsored Businesses</Typography>
@@ -41,7 +50,7 @@ const ShopWithSponsors: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
