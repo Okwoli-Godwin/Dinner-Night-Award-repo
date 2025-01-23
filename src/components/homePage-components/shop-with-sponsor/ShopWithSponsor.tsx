@@ -1,56 +1,90 @@
-import React from "react";
+"use client";
+
+import type React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import Typography from "../../typography/Typography";
 import Button from "../../button/Button";
-import styles from "./shopWithSponsors.module.css";
-import SponsorImage from "../../../images/sponsor-image.png";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../framer-motion/Variant";
+
+// Import Swiper styles
+
+// Assuming you have multiple sponsor images
+import SponsorImage1 from "../../../images/skincare.jpg";
+import SponsorImage2 from "../../../images/fashion.jpg";
+import SponsorImage3 from "../../../images/solar.jpg";
+
+const sponsors = [
+  {
+    image: SponsorImage1,
+    name: "Eco-Friendly Skincare Brand",
+    slogan: "Nature's Care in Every Drop.",
+    description:
+      "At EFSB, we harness the power of nature to create skincare products that are as kind to your skin as they are to the environment. Our commitment to sustainable, toxin-free ingredients is at the heart of every product we make.",
+  },
+  {
+    image: SponsorImage2,
+    name: "Sustainable Fashion Co.",
+    slogan: "Style Meets Sustainability",
+    description:
+      "We believe that fashion should not come at the cost of our planet. Our clothing line is made from recycled materials and ethically sourced fabrics, proving that you can look good while doing good.",
+  },
+  {
+    image: SponsorImage3,
+    name: "Green Energy Solutions",
+    slogan: "Powering a Cleaner Future",
+    description:
+      "Our innovative solar and wind energy solutions are designed to help homeowners and businesses reduce their carbon footprint while saving on energy costs. Join us in creating a more sustainable world, one kilowatt at a time.",
+  },
+];
 
 const ShopWithSponsors: React.FC = () => {
   return (
-    <motion.section
-      variants={fadeIn()}
-      initial="hidden"
-      whileInView="show"
-      exit="hidden"
-      viewport={{ once: true }}
-      className={styles.container}
-    >
-      {/* Div A: Sponsored Businesses and Shop with Our Sponsors */}
-      <div className={styles.header}>
-        <Typography variant="h5">Sponsored Businesses</Typography>
-        <Typography variant="h2">Shop with Our Sponsors</Typography>
+    <section className="container mx-auto px-4 py-16">
+      <div className="text-center mb-12">
+        <Typography variant="h3" className="text-primary mb-2">
+          Sponsored Businesses
+        </Typography>
+        <Typography variant="h2" className="text-4xl font-bold">
+          Shop with Our Sponsors
+        </Typography>
       </div>
 
-      {/* Div B: Image container and text container */}
-      <div className={styles.content}>
-        <div className={styles.imageContainer}>
-          <img
-            src={SponsorImage}
-            alt="Eco-Friendly Skincare Brand"
-            className={styles.image}
-          />
-        </div>
-
-        <div className={styles.textContainer}>
-          <Typography variant="h5" className={styles.textHeader}>
-            Eco-Friendly Skincare Brand
-          </Typography>
-          <Typography variant="h6" className={styles.h6}>
-            Nature’s Care in Every Drop.
-          </Typography>
-          <Typography variant="body" className={styles.textDetails}>
-            At EFSB, we harness the power of nature to create skincare products
-            that are as kind to your skin as they are to the environment. Our
-            commitment to sustainable, toxin-free ingredients is at the heart of
-            every product we make.
-          </Typography>
-          <div className={styles.buttonContainer}>
-            <Button variant="primary" text="See More" />
-          </div>
-        </div>
-      </div>
-    </motion.section>
+      <Swiper
+        modules={[Navigation, Pagination, A11y, Autoplay]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        className="rounded-lg shadow-lg"
+      >
+        {sponsors.map((sponsor, index) => (
+          <SwiperSlide key={index}>
+            <div className="grid md:grid-cols-2 gap-8 items-center p-8">
+              <div className="relative h-[400px]">
+                <img
+                  src={sponsor.image || "/placeholder.svg"}
+                  alt={sponsor.name}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="flex flex-col justify-center">
+                <Typography variant="h4" className="text-primary mb-2">
+                  {sponsor.name}
+                </Typography>
+                <Typography variant="h5" className="text-xl font-semibold mb-4">
+                  {sponsor.slogan}
+                </Typography>
+                <Typography variant="body" className="mb-6">
+                  {sponsor.description}
+                </Typography>
+                <Button variant="special" text="See more"></Button>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
   );
 };
 

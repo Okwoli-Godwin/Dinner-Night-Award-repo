@@ -1,7 +1,11 @@
 import React from "react";
 import Typography from "../../typography/Typography";
-import styles from "./introduction.module.css";
 import DinnerImage from "../../../images/intro-image.png";
+import styles from "./introduction.module.css";
+import img from "../../../images/dinner2.jpg";
+import img2 from "../../../images/award2.jpg";
+import img3 from "../../../images/rename1.jpg";
+import img4 from "../../../images/rename2.jpg";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../framer-motion/Variant";
 
@@ -72,6 +76,21 @@ const IntroSection: React.FC = () => {
             evening among peers and friends.
           </Typography>
         </motion.div>
+      </div>
+
+      <div className="w-[37%] flex flex-wrap justify-between">
+        <div className="h-[200px] w-[48%] mb-[15px] rounded-[15px] overflow-hidden">
+          <img src={img} alt="" className="w-[100%] h-[100%] object-cover" />
+        </div>
+        <div className="h-[200px] w-[48%] mb-[15px] rounded-[15px] overflow-hidden">
+          <img src={img2} alt="" className="w-[100%] h-[100%] object-cover" />
+        </div>
+        <div className="h-[200px] w-[48%] rounded-[15px] overflow-hidden">
+          <img src={img3} alt="" className="w-[100%] h-[100%] object-cover" />
+        </div>
+        <div className="h-[200px] w-[48%] rounded-[15px] overflow-hidden">
+          <img src={img4} alt="" className="w-[100%] h-[100%] object-cover" />
+        </div>
       </div>
     </motion.section>
   );
