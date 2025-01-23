@@ -60,12 +60,16 @@ const IntroSection: React.FC = () => {
         >
           <Typography variant="body">
             Join us for a night to remember, where elegance meets excitement.
-            The [Event Name] Dinner & Awards Night offers a luxurious
-            atmosphere, a gourmet dining experience, and the opportunity to
-            network with industry leaders. Highlights include live performances,
-            inspiring guest speakers, and the presentation of awards honoring
-            outstanding achievements. Don’t miss the chance to enjoy an
-            unforgettable evening among peers and friends.
+            The{" "}
+            <strong style={{ color: "#d8b300", fontSize: "1.3rem" }}>
+              Grand Gala
+            </strong>{" "}
+            Dinner & Awards Night offers a luxurious atmosphere, a gourmet
+            dining experience, and the opportunity to network with industry
+            leaders. Highlights include live performances, inspiring guest
+            speakers, and the presentation of awards honoring outstanding
+            achievements. Don’t miss the chance to enjoy an unforgettable
+            evening among peers and friends.
           </Typography>
         </motion.div>
       </div>

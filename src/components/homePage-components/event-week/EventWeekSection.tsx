@@ -155,10 +155,11 @@ const weekEvent: Activities[] = [
 const EventWeekSection: React.FC = () => {
   return (
     <motion.section
+      variants={fadeIn()}
       className={styles.container}
       initial="hidden"
       whileInView="visible"
-      variants={fadeIn()}
+      viewport={{ once: true }}
     >
       <div className={styles.divA}>
         <Typography variant="h4" className={styles.subtitle}>

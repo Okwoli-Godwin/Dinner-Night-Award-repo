@@ -10,9 +10,10 @@ const EventCallToAction: React.FC = () => {
         Don’t Miss Out on a Night of Celebration and Connection!
       </Typography>
       <Typography variant="body" className={styles.details}>
-        Join us at [Event Name] for a memorable evening filled with elegance,
-        entertainment, and recognition of excellence. Secure your ticket now to
-        experience an unforgettable night!
+        Join us at the <strong style={{ color: "#d8b300" }}>Grand Gala</strong>{" "}
+        for a memorable evening filled with elegance, entertainment, and
+        recognition of excellence. Secure your ticket now to experience an
+        unforgettable night!
       </Typography>
 
       <div className={styles.buttons}>

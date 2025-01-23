@@ -22,6 +22,11 @@
   margin: 0 auto;
 }
 
+.details strong {
+  color: "#d8b300";
+  font-size: 1.3rem;
+}
+
 /* Button container styling */
 .buttons {
   display: flex;
