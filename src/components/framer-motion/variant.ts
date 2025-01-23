@@ -21,6 +21,7 @@ export const fadeIn = (delay: number = 0.2): Variants => {
         duration: 0.5,
       },
     },
+
     show: {
       y: 0,
       x: 0,
@@ -44,6 +45,17 @@ export const fadeIn = (delay: number = 0.2): Variants => {
     remove: {
       y: -40,
       opacity: 0.5,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: delay,
+        ease: "easeOut",
+        duration: 0.5,
+        staggerChildren: 0.2,
+        when: "beforeChildren",
+      },
     },
   };
 };
