@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules"
-import Typography from "../../typography/Typography"
-import Button from "../../button/Button"
+import type React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
+import Typography from "../../typography/Typography";
+import Button from "../../button/Button";
 
 // Import Swiper styles
 
 // Assuming you have multiple sponsor images
-import SponsorImage1 from "../../../images/skincare.jpg"
-import SponsorImage2 from "../../../images/fashion.jpg"
-import SponsorImage3 from "../../../images/solar.jpg"
+import SponsorImage1 from "../../../images/skincare.jpg";
+import SponsorImage2 from "../../../images/fashion.jpg";
+import SponsorImage3 from "../../../images/solar.jpg";
 
 const sponsors = [
   {
@@ -35,7 +35,7 @@ const sponsors = [
     description:
       "Our innovative solar and wind energy solutions are designed to help homeowners and businesses reduce their carbon footprint while saving on energy costs. Join us in creating a more sustainable world, one kilowatt at a time.",
   },
-]
+];
 
 const ShopWithSponsors: React.FC = () => {
   return (
@@ -85,8 +85,7 @@ const ShopWithSponsors: React.FC = () => {
         ))}
       </Swiper>
     </section>
-  )
-}
+  );
+};
 
-export default ShopWithSponsors
-
+export default ShopWithSponsors;
