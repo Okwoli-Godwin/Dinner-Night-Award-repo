@@ -1,7 +1,5 @@
 import React from "react";
 import Typography from "../../typography/Typography";
-import DinnerImage from "../../../images/intro-image.png";
-import styles from "./introduction.module.css";
 import img from "../../../images/dinner2.jpg";
 import img2 from "../../../images/award2.jpg";
 import img3 from "../../../images/rename1.jpg";
@@ -11,16 +9,17 @@ import { fadeIn } from "../../framer-motion/Variant";
 
 const IntroSection: React.FC = () => {
   return (
-    <motion.section
+    <div className="w-[100%] flex justify-center">
+      <motion.section
       variants={fadeIn()}
       // initial="hidden"
       // whileInView="show"
       // exit="remove"
       // viewport={{ rootMargin: "-100px" }}
-      className={styles.container}
+      className="flex w-[93%] items-center"
     >
       {/* First div with an image */}
-      <motion.div
+      {/* <motion.div
         variants={fadeIn()}
         initial={{ x: -50, opacity: 0.3 }}
         whileInView="show"
@@ -29,11 +28,11 @@ const IntroSection: React.FC = () => {
         className={styles.imageContainer}
       >
         <img src={DinnerImage} alt="Elegant Event" className={styles.image} />
-      </motion.div>
+      </motion.div> */}
 
       {/* Second div with text content */}
-      <div className={styles.textContainer}>
-        <motion.div
+      <div className="w-[100%]">
+        {/* <motion.div
           variants={fadeIn(0.1)}
           initial={{ x: 50, opacity: 0.5 }}
           // transition={{ delay: 30.5 }}
@@ -42,7 +41,7 @@ const IntroSection: React.FC = () => {
           viewport={{ rootMargin: "-100px" }}
         >
           <Typography variant="h6">Our Introduction</Typography>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           variants={fadeIn(0.5)}
@@ -61,6 +60,7 @@ const IntroSection: React.FC = () => {
           whileInView="show"
           exit="remove"
           viewport={{ once: true }}
+          className="w-[85%] mt-[15px]"
         >
           <Typography variant="body">
             Join us for a night to remember, where elegance meets excitement.
@@ -78,7 +78,7 @@ const IntroSection: React.FC = () => {
         </motion.div>
       </div>
 
-      <div className="w-[37%] flex flex-wrap justify-between">
+      <div className="w-[40%] flex flex-wrap justify-between">
         <div className="h-[200px] w-[48%] mb-[15px] rounded-[15px] overflow-hidden">
           <img src={img} alt="" className="w-[100%] h-[100%] object-cover" />
         </div>
@@ -93,6 +93,7 @@ const IntroSection: React.FC = () => {
         </div>
       </div>
     </motion.section>
+    </div>
   );
 };
 
