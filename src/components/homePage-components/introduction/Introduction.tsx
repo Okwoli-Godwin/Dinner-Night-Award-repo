@@ -5,13 +5,13 @@ import img2 from "../../../images/award2.jpg";
 import img3 from "../../../images/rename1.jpg";
 import img4 from "../../../images/rename2.jpg";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../framer-motion/Variant";
+import { FadeIn } from "../../framer-motion/Variant";
 
 const IntroSection: React.FC = () => {
   return (
     <div className="w-[100%] flex justify-center">
       <motion.section
-      variants={fadeIn()}
+      variants={FadeIn()}
       // initial="hidden"
       // whileInView="show"
       // exit="remove"
@@ -44,7 +44,7 @@ const IntroSection: React.FC = () => {
         </motion.div> */}
 
         <motion.div
-          variants={fadeIn(0.5)}
+          variants={FadeIn(0.5)}
           initial={{ x: 20, opacity: 0.5 }}
           whileInView="show"
           exit="remove"
@@ -55,7 +55,7 @@ const IntroSection: React.FC = () => {
           </Typography>
         </motion.div>
         <motion.div
-          variants={fadeIn()}
+          variants={FadeIn()}
           initial={{ y: 50, opacity: 0.5 }}
           whileInView="show"
           exit="remove"

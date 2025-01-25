@@ -3,13 +3,9 @@ section {
 }
 
 .main__container {
-  /* max-width: 1200px; */
   margin-inline: auto;
-  /* background: rgb(124, 145, 175); */
-  /* padding: 3rem; */
 }
 
-/* Marquee styles */
 .marquee {
   --gap: 10px;
   position: relative;

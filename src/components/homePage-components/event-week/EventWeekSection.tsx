@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 // import { fadeIn } from "./fadeIn"; // Assuming fadeIn is in the same folder
-import { fadeIn } from "../../framer-motion/Variant";
+import { FadeIn } from "../../framer-motion/Variant";
+
 import styles from "./eventWeekSection.module.css";
 import Typography from "../../typography/Typography";
 
@@ -58,7 +59,7 @@ const weekEvent: Activities[] = [
 const EventWeekSection: React.FC = () => {
   return (
     <motion.section
-      variants={fadeIn()}
+      variants={FadeIn()}
       className={styles.container}
       initial="hidden"
       whileInView="visible"
