@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
         {text.split("").map((char, index) => (
           <span
             key={index}
-            style={{ "--i": index } as React.CSSProperties} // Assign staggered delays
+            style={{ "--i": index } as React.CSSProperties}
           >
             {char}
           </span>
@@ -59,7 +59,9 @@ const Hero: React.FC = () => {
       <div className={styles.overlay}>
         <div className={styles.content}>
           <Typography variant="h3">Celebrating Excellence:</Typography>
-          <Typography variant="h1">{renderFloatingText("The Grand Gala")}</Typography>
+          <Typography variant="h1">
+          {/* {renderFloatingText("The Grand Gala")} */} The Grand Gala
+        </Typography>
           <Typography variant="body2" className={styles.hero_details}>
             Join us for an unforgettable evening of recognition, inspiration,
             and connection.
