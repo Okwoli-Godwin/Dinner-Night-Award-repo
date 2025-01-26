@@ -14,11 +14,11 @@ const Homepage = () => {
   return (
     <div className="relative">
       <Hero />
-      {/* <WhatToExpect />
-      <IntroSection />
+      <WhatToExpect />
+      {/* <IntroSection />
       <Gallery />
       <EventCallToAction /> */}
-      {/* <ShopWithSponsors /> */}
+      {/* <ShopWithSponsors />
       
 
       {/* <div className="mt-[100px]">
