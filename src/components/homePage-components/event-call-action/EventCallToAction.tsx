@@ -10,7 +10,7 @@ const EventCallToAction: React.FC = () => {
         <Typography variant="h4" className={styles.h4}>
           Don’t Miss Out on a Night of Celebration and Connection!
         </Typography>
-        <Typography variant="body" className={styles.details}>
+        <Typography variant="body2" className={styles.details}>
           Join us at the{" "}
           <strong style={{ color: "#d8b300" }}>Grand Gala</strong> for a
           memorable evening filled with elegance, entertainment, and recognition

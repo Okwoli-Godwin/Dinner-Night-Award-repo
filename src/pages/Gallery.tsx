@@ -9,43 +9,44 @@ import img7 from "../images/gallery11.jpg"
 import img8 from "../images/gallery16.jpg"
 import img9 from "../images/gallery18.jpg"
 import img10 from "../images/gallery20.jpg"
+import styles from "./Gallery.module.css"
 
 
 const Gallery = () => {
   return (
-    <div className="w-[100%] flex  mt-[100px] flex-col items-center">
+    <div className={styles.container}>
       <Typography variant="h2">Past Events Gallery</Typography>
 
-      <div className="w-[100%] flex flex-wrap mt-[30px]">
-        <div className="h-[230px] w-[20%]">
-            <img src={img3} alt="" className="w-[100%] h-[100%] object-cover"/>
+      <div className={styles.image_container}>
+        <div className={styles.image_holder}>
+            <img src={img3} alt="" className={styles.image}/>
         </div>
-        <div className="h-[230px] w-[20%]">
-            <img src={img6} alt="" className="w-[100%] h-[100%] object-cover"/>
+        <div className={styles.image_holder}>
+            <img src={img6} alt="" className={styles.image}/>
         </div>
-        <div className="h-[230px] w-[20%]">
-            <img src={img5} alt="" className="w-[100%] h-[100%] object-cover"/>
+        <div className={styles.image_holder}>
+            <img src={img5} alt="" className={styles.image}/>
         </div>
-        <div className="h-[230px] w-[20%]">
-            <img src={img} alt="" className="w-[100%] h-[100%] object-cover"/>
+        <div className={styles.image_holder}>
+            <img src={img} alt="" className={styles.image}/>
         </div>
-        <div className="h-[230px] w-[20%]">
-            <img src={img2} alt="" className="w-[100%] h-[100%] object-cover"/>
+        <div className={styles.image_holder}>
+            <img src={img2} alt="" className={styles.image}/>
         </div>
-        <div className="h-[230px] w-[20%]">
-            <img src={img7} alt="" className="w-[100%] h-[100%] object-cover"/>
+        <div className={styles.image_holder}>
+            <img src={img7} alt="" className={styles.image}/>
         </div>
-        <div className="h-[230px] w-[20%]">
-            <img src={img8} alt="" className="w-[100%] h-[100%] object-cover"/>
+        <div className={styles.image_holder}>
+            <img src={img8} alt="" className={styles.image}/>
         </div>
-        <div className="h-[230px] w-[20%]">
-            <img src={img4} alt="" className="w-[100%] h-[100%] object-cover"/>
+        <div className={styles.image_holder}>
+            <img src={img4} alt="" className={styles.image}/>
         </div>
-        <div className="h-[230px] w-[20%]">
-            <img src={img9} alt="" className="w-[100%] h-[100%] object-cover"/>
+        <div className={styles.image_holder}>
+            <img src={img9} alt="" className={styles.image}/>
         </div>
-        <div className="h-[230px] w-[20%]">
-            <img src={img10} alt="" className="w-[100%] h-[100%] object-cover"/>
+        <div className={styles.image_holder}>
+            <img src={img10} alt="" className={styles.image}/>
         </div>
       </div>
     </div>

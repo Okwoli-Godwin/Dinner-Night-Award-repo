@@ -6,7 +6,7 @@ const HomeLayout = () => {
     <>
         <Header />
         <Outlet />
-        {/* <Footer /> */}
+        <Footer />
     </>
   )
 }

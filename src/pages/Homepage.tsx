@@ -15,21 +15,21 @@ const Homepage = () => {
     <div className="relative">
       <Hero />
       <WhatToExpect />
-      {/* <IntroSection />
+      <IntroSection />
       <Gallery />
-      <EventCallToAction /> */}
-      {/* <ShopWithSponsors />
+      <EventCallToAction />
+      {/* <ShopWithSponsors /> */}
       
 
-      {/* <div className="mt-[100px]">
+      <div className="mt-[100px]">
         <Typography variant="h2" className="text-center mt-8">
           Business Advert
         </Typography>
         <AdvertCarousel isReverse={true} scrollSpeed={40} />
         <AdvertCarousel isReverse={false} scrollSpeed={10} />
-      </div> */}
+      </div>
 
-      {/* <EventWeekSection /> */}
+       <EventWeekSection />
 
       <img src={img} alt="img" className="fixed bottom-[10px] right-[5px] h-[100px] mr-[-10px]"/>
     </div>
