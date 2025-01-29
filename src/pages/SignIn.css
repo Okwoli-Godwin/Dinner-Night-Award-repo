@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .SignIn{
     background: url(../images/hero-bg.png);
     /* background: linear-gradient(rgba(0, 0, 0, 0.479),url(../images/hero-bg.png)); */
@@ -12,19 +11,4 @@
     background-color: rgba(0, 0, 0, 0.253);
     box-shadow: 3px 3px 8px 6px rgba(211, 211, 211, 0.37);
     /* border: solid 1px lightgray; */
-=======
-.SignIn{
-    background: url(../images/hero-bg.png);
-    /* background: linear-gradient(rgba(0, 0, 0, 0.479),url(../images/hero-bg.png)); */
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0.699)), url(../images/hero-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.inner{
-    background-color: rgba(0, 0, 0, 0.253);
-    box-shadow: 3px 3px 8px 6px rgba(211, 211, 211, 0.37);
-    /* border: solid 1px lightgray; */
->>>>>>> cfe9d4f55d0f356942908fef81016e091a764a03
 }

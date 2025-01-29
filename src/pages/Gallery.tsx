@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import Hero from "../components/Gallery-components/Hero/Hero"
-import OurGallery from "../components/Gallery-components/OurGallery/OurGallery"
-import ProjectMembers from "../components/Gallery-components/project-members/ProjectMembers"
-
-const Gallery = () => {
-  return (
-     <>
-     <Hero/>
-     <ProjectMembers/>
-     <OurGallery/>
-     </>
-  )
-}
-
-export default Gallery
-=======
 import Typography from "../components/typography/Typography"
 import img from "../images/gallery1.jpg"
 import img2 from "../images/gallery2.jpg"
@@ -71,4 +54,3 @@ const Gallery = () => {
 }
 
 export default Gallery
->>>>>>> cfe9d4f55d0f356942908fef81016e091a764a03
