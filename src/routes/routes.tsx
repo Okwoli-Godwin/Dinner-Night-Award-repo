@@ -5,10 +5,6 @@ import Ticket from "../pages/Ticket";
 import SignIn from "../pages/SignIn";
 import DashboardLayout from "../components/layout/DashboardLayout";
 import TicketSold from "../components/Gallery-components/Dashbord-component/TicketSold";
-import SignIn from "../pages/SignIn";
-import Gallery from "../pages/Gallery";
-import DashboardLayout from "../components/layout/DashboardLayout";
-import TicketSold from "../components/Gallery-components/Dashbord-component/TicketSold";
 
 export const Element = createBrowserRouter([
     {
