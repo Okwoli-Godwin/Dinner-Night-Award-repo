@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Base styling for hero section */
 .hero1 {
     max-width: 96%;
@@ -92,4 +93,100 @@
       margin-top: 1rem;
     }
   }
+=======
+/* Base styling for hero section */
+.hero1 {
+    max-width: 96%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh ;
+    background-image: url("../../../images/hero-bg.png"); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 16px;
+  }
+  
+  /* Overlay for background image */
+  .overlay {
+    border-radius: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.7
+    ); /* Dark overlay for better text readability */
+  }
+  
+  .hero_details {
+    margin-top: 3px;
+  }
+  
+  /* Content positioning */
+  .content {
+    /* background-color: orange; */
+    margin-top: 4rem;
+    position: relative;
+    text-align: center;
+    /* max-width: 600px; */
+    padding: 1rem;
+    z-index: 1;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .buttonContainer {
+    margin-top: 4rem;
+  }
+  
+  /* Button styling */
+  .button {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Countdown styling */
+  .countdown {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .hero {
+      border-radius: 5px;
+      height: 70vh;
+    }
+    .countdown {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content {
+      margin-top: 2rem;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .content {
+      margin-top: 1rem;
+    }
+  }
+>>>>>>> cfe9d4f55d0f356942908fef81016e091a764a03
   

@@ -6,17 +6,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  background-image: url("../../../images/hero-bg.png"); /* Replace with your image path */
+  height: 100vh;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: white;
-  border-radius: 16px;
+  transition: all 0.4s ease-in-out;
 }
 
 /* Overlay for background image */
 .overlay {
-  border-radius: 16px;
   position: absolute;
   top: 0;
   left: 0;
@@ -27,7 +26,10 @@
     0,
     0,
     0.7
-  ); /* Dark overlay for better text readability */
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero_details {
@@ -50,7 +52,7 @@
 }
 
 .buttonContainer {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 /* Button styling */
@@ -69,6 +71,8 @@
 @media (max-width: 768px) {
   .hero {
     border-radius: 5px;
+    /* background-size: contain; */
+    /* background-size: contain; */
   }
   .countdown {
     font-size: 1rem;
@@ -76,6 +80,12 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    border-radius: 5px;
+    /* background-size: contain; */
+    background-size: cover;
+    height: 70vh;
+  }
   .content {
     margin-top: 2rem;
   }
@@ -84,5 +94,57 @@
 @media (max-width: 320px) {
   .content {
     margin-top: 1rem;
+  }
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-text {
+  display: inline-block;
+  position: relative;
+  letter-spacing: 20px;
+}
+
+.floating-text span {
+  display: inline-block;
+  animation: float 4s ease-in-out infinite; /* Floating animation */
+  animation-delay: calc(var(--i) * 0.2s); /* Staggered start for each character */
+}
+
+.marquee {
+  display: block;
+  width: fit-content; /* Ensures the marquee is only as wide as its content */
+  margin: 0 auto; /* Centers the marquee horizontally */
+  font-size: 70px; /* Adjust as needed */
+  font-weight: bold;
+  color: #d8b300;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee span {
+  display: inline-block;
+  animation: scroll-left 10s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
