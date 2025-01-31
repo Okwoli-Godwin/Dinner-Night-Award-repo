@@ -79,17 +79,17 @@ section {
   left: 50%;
   display: flex;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   z-index: 10;
-  background-color: rgb(37 99 235);
+  background-color: #0c8f54;
   color: white;
-  padding: 8px 16px;
+  padding: 0.4rem 0.8rem;
   border-radius: 0.25rem;
   transition: background-color 0.4s ease-in-out;
 }
 
 .marquee__item--content--button:hover {
-  background-color: rgba(0, 0, 255, 0.712);
+  background-color: #085834;
   /* transform: scale(1.01); */
 }
 .marquee__item--content--button--display {
@@ -154,7 +154,7 @@ section {
 }
 @media (max-width: 600px) {
   .marquee__content > * {
-    width: 300px;
-    height: 300px;
+    width: 220px;
+    height: 220px;
   }
 }
