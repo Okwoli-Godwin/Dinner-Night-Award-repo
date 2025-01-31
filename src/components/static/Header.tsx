@@ -61,7 +61,7 @@ const Header: React.FC = () => {
           Vote
         </NavLink>
         <div className={styles.buttonGroup}>
-          <Button variant="special" text="Sign In" />
+          <Button onClick={() => navigate("/signIn")} variant="special" text="Sign In" />
           <Button onClick={() => navigate("/get-ticket")} variant="special2" text="Get Ticket" />
         </div>
       </nav>

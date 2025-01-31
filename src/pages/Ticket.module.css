@@ -1,0 +1,179 @@
+.top_container{
+    width: 100%;
+    position: relative;
+    height: 200px;
+}
+.image{
+    position: absolute;
+    inset: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.wrapper{
+    position: absolute;
+    inset: 0;
+    background-color: #00000083;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.holder{
+    display: flex;
+    align-items: center;
+}
+.h4{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+.icon{
+    margin-left: 15px;
+    color: #fff;
+}
+.h2{
+    font-weight: 700;
+    margin-left: 15px;
+    color: #d8b300;
+    font-size: 35px;
+}
+.bottom_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 50px;
+    align-items: center;
+    flex-direction: column;
+}
+.text{
+    font-size: 32px;
+    font-weight: 700;
+}
+.content_holder{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+.ticket{
+    width: 330px;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    border-radius: 20px;
+}
+.image2{
+    position: absolute;
+    inset: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.wrapper2{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    inset: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #00000091;
+}
+.title_holder{
+    width: 70%;
+    height: 50px;
+    background-color: white;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+.amount_holder{
+    width: 100%;
+    border-bottom: 1px;
+    border: #d4d4d4;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    display: flex;
+    justify-content: center;
+    border-style: dashed;
+    padding-bottom: 20px;
+}
+.amount{
+    font-size: 31px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 15px;
+}
+.small_text_holder{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px;
+    border: #d4d4d4;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-style: dashed;
+}
+.small_text{
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    padding-bottom: 30px;
+}
+.button{
+    width: 70%;
+    height: 55px;
+    background-color: #0C8F54;
+    margin-top: 12px;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    font-weight: 700;
+}
+.button2{
+    width: 70%;
+    height: 55px;
+    background-color: #d8b300;
+    margin-top: 12px;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    font-weight: 700;
+}
+
+@media (max-width: 425px) {
+    .text{
+        text-align: center;
+    }
+    .ticket{
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .bottom_container{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .h2{
+        font-size: 25px;
+    }
+}

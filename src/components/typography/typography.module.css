@@ -88,7 +88,9 @@ p {
 }
 @media (max-width: 480px) {
   .h1 {
-    font-size: 3rem;
+    font-size: 43px;
+    font-weight: 700;
+    margin-top: 15px;
   }
 
   .h2 {
@@ -97,5 +99,14 @@ p {
 
   .h3 {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .body{
+    text-align: justify;
+  }
+  .h2{
+    font-size: 23px;
   }
 }

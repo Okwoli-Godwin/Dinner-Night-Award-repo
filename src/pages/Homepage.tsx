@@ -25,13 +25,13 @@ const Homepage = () => {
         <Typography variant="h2" className="text-center mt-8">
           Business Advert
         </Typography>
-        {/* <AdvertCarousel isReverse={true} scrollSpeed={40} /> */}
+        <AdvertCarousel isReverse={true} scrollSpeed={40} />
         <AdvertCarousel isReverse={false} scrollSpeed={10} />
       </div>
 
-      <EventWeekSection />
+       <EventWeekSection />
 
-      <img src={img} alt="img" className="fixed bottom-[30px] right-[20px] h-[100px]"/>
+      <img src={img} alt="img" className="fixed bottom-[10px] right-[5px] h-[100px] mr-[-10px]"/>
     </div>
   );
 };

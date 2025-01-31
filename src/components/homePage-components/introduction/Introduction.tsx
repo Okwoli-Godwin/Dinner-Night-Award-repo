@@ -1,51 +1,25 @@
 import React from "react";
 import Typography from "../../typography/Typography";
-import DinnerImage from "../../../images/intro-image.png";
-import styles from "./introduction.module.css";
 import img from "../../../images/dinner2.jpg";
 import img2 from "../../../images/award2.jpg";
 import img3 from "../../../images/rename1.jpg";
 import img4 from "../../../images/rename2.jpg";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../framer-motion/Variant";
+import { FadeIn } from "../../framer-motion/Variant";
+import styles from "./introduction.module.css"
 
 const IntroSection: React.FC = () => {
   return (
-    <motion.section
-      variants={fadeIn()}
-      // initial="hidden"
-      // whileInView="show"
-      // exit="remove"
-      // viewport={{ rootMargin: "-100px" }}
-      className={styles.container}
+    <div className={styles.container}>
+      <motion.section
+      variants={FadeIn()}
+      className={styles.motion_container}
     >
-      {/* First div with an image */}
-      <motion.div
-        variants={fadeIn()}
-        initial={{ x: -50, opacity: 0.3 }}
-        whileInView="show"
-        // exit="remove"
-        viewport={{ once: true }}
-        className={styles.imageContainer}
-      >
-        <img src={DinnerImage} alt="Elegant Event" className={styles.image} />
-      </motion.div>
 
       {/* Second div with text content */}
-      <div className={styles.textContainer}>
+      <div className={styles.contain}>
         <motion.div
-          variants={fadeIn(0.1)}
-          initial={{ x: 50, opacity: 0.5 }}
-          // transition={{ delay: 30.5 }}
-          whileInView="show"
-          exit="remove"
-          viewport={{ rootMargin: "-100px" }}
-        >
-          <Typography variant="h6">Our Introduction</Typography>
-        </motion.div>
-
-        <motion.div
-          variants={fadeIn(0.5)}
+          variants={FadeIn(0.5)}
           initial={{ x: 20, opacity: 0.5 }}
           whileInView="show"
           exit="remove"
@@ -56,11 +30,12 @@ const IntroSection: React.FC = () => {
           </Typography>
         </motion.div>
         <motion.div
-          variants={fadeIn()}
+          variants={FadeIn()}
           initial={{ y: 50, opacity: 0.5 }}
           whileInView="show"
           exit="remove"
           viewport={{ once: true }}
+          className="w-[100%] mt-[15px]"
         >
           <Typography variant="body">
             Join us for a night to remember, where elegance meets excitement.
@@ -78,21 +53,22 @@ const IntroSection: React.FC = () => {
         </motion.div>
       </div>
 
-      <div className="w-[37%] flex flex-wrap justify-between">
-        <div className="h-[200px] w-[48%] mb-[15px] rounded-[15px] overflow-hidden">
-          <img src={img} alt="" className="w-[100%] h-[100%] object-cover" />
+      <div className={styles.image_container}>
+        <div className={styles.image_holder}>
+          <img src={img} alt="" className={styles.image} />
         </div>
-        <div className="h-[200px] w-[48%] mb-[15px] rounded-[15px] overflow-hidden">
-          <img src={img2} alt="" className="w-[100%] h-[100%] object-cover" />
+        <div className={styles.image_holder}>
+          <img src={img2} alt="" className={styles.image} />
         </div>
-        <div className="h-[200px] w-[48%] rounded-[15px] overflow-hidden">
-          <img src={img3} alt="" className="w-[100%] h-[100%] object-cover" />
+        <div className={styles.image_holder}>
+          <img src={img3} alt="" className={styles.image} />
         </div>
-        <div className="h-[200px] w-[48%] rounded-[15px] overflow-hidden">
-          <img src={img4} alt="" className="w-[100%] h-[100%] object-cover" />
+        <div className={styles.image_holder}>
+          <img src={img4} alt="" className={styles.image} />
         </div>
       </div>
     </motion.section>
+    </div>
   );
 };
 

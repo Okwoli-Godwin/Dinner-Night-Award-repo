@@ -16,7 +16,7 @@ import FooterLogo from "../../images/cyonlogo.png";
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      <div className="w-[100%] h-[100%] bg-[#000000d3] flex justify-around p-[40px]">
+      <div className={styles.footer_wrapper}>
         {/* Div A: Logo and Text */}
         <div className={styles.footerSection}>
           <img
