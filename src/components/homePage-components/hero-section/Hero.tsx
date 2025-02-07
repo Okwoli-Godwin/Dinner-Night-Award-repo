@@ -31,20 +31,6 @@ const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
 
-  const renderFloatingText = (text: string) => {
-    return (
-      <span className={styles["floating-text"]}>
-        {text.split("").map((char, index) => (
-          <span
-            key={index}
-            style={{ "--i": index } as React.CSSProperties}
-          >
-            {char}
-          </span>
-        ))}
-      </span>
-    );
-  };
 
   return (
     <section
