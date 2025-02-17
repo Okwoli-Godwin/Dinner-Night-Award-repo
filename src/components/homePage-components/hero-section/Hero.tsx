@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-  const targetDate = new Date(new Date().getTime() + 150 * 24 * 60 * 60 * 1000);
+  const targetDate = new Date("2025-07-06T00:00:00");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,6 +31,17 @@ const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
 
+  // const renderFloatingText = (text: string) => {
+  //   return (
+  //     <span className={styles["floating-text"]}>
+  //       {text.split("").map((char, index) => (
+  //         <span key={index} style={{ "--i": index } as React.CSSProperties}>
+  //           {char}
+  //         </span>
+  //       ))}
+  //     </span>
+  //   );
+  // };
 
   return (
     <section
@@ -39,15 +50,15 @@ const Hero: React.FC = () => {
         backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
       }}
     >
       <div className={styles.overlay}>
         <div className={styles.content}>
           <Typography variant="h3">Celebrating Excellence:</Typography>
           <Typography variant="h1">
-          {/* {renderFloatingText("The Grand Gala")} */} The Grand Gala
-        </Typography>
+            {/* {renderFloatingText("The Grand Gala")} */} The Grand Gala
+          </Typography>
           <Typography variant="body2" className={styles.hero_details}>
             Join us for an unforgettable evening of recognition, inspiration,
             and connection.
