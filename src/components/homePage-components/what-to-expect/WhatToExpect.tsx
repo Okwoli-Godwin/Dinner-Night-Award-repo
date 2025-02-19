@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "../../typography/Typography";
-import styles from "./WhatToExpect.module.css";
+import styles from "./whatToExpect.module.css";
 import img from "../../../images/dinner.jpg"
 import img2 from "../../../images/award.gif"
 import img3 from "../../../images/networking.jpg"
