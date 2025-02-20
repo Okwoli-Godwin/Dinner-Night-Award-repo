@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import Typography from "../../typography/Typography";
-import styles from "./WhatToExpect.module.css";
-import img from "../../../images/dinner.jpg";
-import img2 from "../../../images/award.gif";
-import img3 from "../../../images/networking.jpg";
-import img4 from "../../../images/entertainment.jpg";
+import styles from "./whatToExpect.module.css";
+import img from "../../../images/dinner.jpg"
+import img2 from "../../../images/award.gif"
+import img3 from "../../../images/networking.jpg"
+import img4 from "../../../images/entertainment.jpg"
 
 const WhatToExpect: React.FC = () => {
   const [imagesLoaded, setImagesLoaded] = useState([false, false, false, false]);

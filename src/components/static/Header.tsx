@@ -3,7 +3,7 @@ import Typography from "../typography/Typography";
 import CyonLogo from "../../images/cyonlogo1.png";
 import type React from "react";
 import { useState, useEffect } from "react";
-import styles from "./Header.module.css";
+import styles from "./header.module.css";
 import { NavLink } from "react-router-dom";
 import { X } from "lucide-react";
 import { Menu } from "lucide-react";

@@ -7,12 +7,15 @@ import WhatToExpect from "../components/homePage-components/what-to-expect/WhatT
 import Typography from "../components/typography/Typography";
 
 import AdvertCarousel from "../components/advertCarousel/AdvertCarousel";
+
 import img from "../images/gif.gif";
 import Gallery from "./Gallery";
+// import BusinessAdvertSkeleton from "../components/businessAdvertCarousel/BusinessAdvertSkeleton";
 
 const Homepage = () => {
   return (
     <div className="relative">
+      {/* <BusinessAdvertSkeleton/> */}
       <Hero />
       <WhatToExpect />
 
@@ -20,7 +23,7 @@ const Homepage = () => {
         <Typography variant="h2" className="text-center mt-8">
           Business Advert
         </Typography>
-        <AdvertCarousel isReverse={true} scrollSpeed={40} />
+        <AdvertCarousel isReverse={false} scrollSpeed={40} />
       </div>
 
       <IntroSection />

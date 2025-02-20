@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom"
 const ticketOptions = [
   { title: "Singles", price: 6000, ticketType: "singles", image: img1 },
   { title: "Couples", price: 10000, ticketType: "couples", image: img4 },
-  { title: "VIP", price: 50000, ticketType: "vip", image: img3 },
+  { title: "VIP", price: 60000, ticketType: "vip", image: img3 },
   { title: "Table for 8", price: 100000, ticketType: "table", image: img3 },
 ]
 
