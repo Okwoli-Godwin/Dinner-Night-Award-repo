@@ -2,8 +2,10 @@ import React from "react";
 import Typography from "../../typography/Typography";
 import Button from "../../button/Button";
 import styles from "./eventCallToAction.module.css";
+import { useNavigate } from "react-router-dom";
 
 const EventCallToAction: React.FC = () => {
+  const navigate = useNavigate()
   return (
     <div className={styles.container}>
       <div className="w-[100%] h-[100%] bg-[#000000c2] p-[40px] rounded-[20px] flex flex-col items-center">
@@ -18,7 +20,7 @@ const EventCallToAction: React.FC = () => {
           night!
         </Typography>
 
-        <div className={styles.buttons}>
+        <div onClick={() => navigate("/get-ticket")} className={styles.buttons}>
           <Button text="Buy Ticket Now" variant="primary" />
         </div>
       </div>
