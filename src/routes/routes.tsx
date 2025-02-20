@@ -5,6 +5,7 @@ import Ticket from "../pages/Ticket";
 import SignIn from "../pages/SignIn";
 import DashboardLayout from "../components/layout/DashboardLayout";
 import TicketSold from "../components/Gallery-components/Dashbord-component/TicketSold";
+import PaymentConfirmation from "../pages/PaymentConfirmation";
 
 export const Element = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ export const Element = createBrowserRouter([
             {
                 path: "/get-ticket",
                 element: <Ticket />
+            },
+            {
+                path: "/payment-confirmation",
+                element: <PaymentConfirmation />
             }
         ]
     },

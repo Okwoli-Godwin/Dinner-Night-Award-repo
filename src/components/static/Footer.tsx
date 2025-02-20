@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             className={styles.logo}
           />
           <Typography variant="h6">
-            Catholic Youth Of Nigeria (CYON), Lagos.
+            Catholic Youth Organization Of Nigeria (CYON), Lagos.
           </Typography>
           <Typography variant="body2">Our Lady Of The Rosary (OLR).</Typography>
         </div>

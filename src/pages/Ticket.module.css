@@ -54,10 +54,11 @@
 .content_holder{
     width: 90%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 70px;
     margin-bottom: 50px;
+    align-items: center;
 }
 .ticket{
     width: 330px;
@@ -66,6 +67,9 @@
     overflow: hidden;
     display: flex;
     border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 .image2{
     position: absolute;
