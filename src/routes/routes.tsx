@@ -5,6 +5,7 @@ import Ticket from "../pages/Ticket";
 import SignIn from "../pages/SignIn";
 import DashboardLayout from "../components/layout/DashboardLayout";
 import TicketSold from "../components/Gallery-components/Dashbord-component/TicketSold";
+import SetBusiness from "../components/Gallery-components/Dashbord-component/setBusiness/SetBusiness";
 
 export const Element = createBrowserRouter([
     {
@@ -32,6 +33,9 @@ export const Element = createBrowserRouter([
             {
                 index: true,
                 element:<TicketSold />
+            }, {
+                path: '/dashboard/setBusiness',
+                element: <SetBusiness/>
             }
         ]
     },
