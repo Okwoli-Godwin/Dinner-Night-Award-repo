@@ -1,21 +1,21 @@
 import { motion, AnimatePresence } from "framer-motion";
 import "./Modal.css"; // CSS file for styling
 import { X } from "lucide-react";
-import { ReactElement } from "react";
+// import { ReactElement } from "react";
 import Typography from "../typography/Typography";
 
-interface Card {
-  id: number;
-  image: string;
-  name: string;
-  buttonLabel: string;
-  address: string;
-  location: string;
-  website: string;
-  businessDescription?: string | null;
-  socialMediaLink?: string | null;
-  socialMedia?: ReactElement[];
-}
+// interface Card {
+//   id: number;
+//   image: string;
+//   name: string;
+//   buttonLabel: string;
+//   address: string;
+//   location: string;
+//   website: string;
+//   businessDescription?: string | null;
+//   socialMediaLink?: string | null;
+//   socialMedia?: ReactElement[];
+// }
 
 interface Business {
   phoneNumber: number;
