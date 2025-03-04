@@ -4,7 +4,8 @@ import Homepage from "../pages/Homepage";
 import Ticket from "../pages/Ticket";
 import SignIn from "../pages/SignIn";
 import DashboardLayout from "../components/layout/DashboardLayout";
-import TicketSold from "../components/Gallery-components/Dashbord-component/TicketSold";
+import TicketSold from "../components/Dashbord-component/TicketSold";
+import Gallery from "../pages/Gallery";
 
 export const Element = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ export const Element = createBrowserRouter([
             {
                 index: true,
                 element: <Homepage />
+            },
+            {
+                path:'/gallery',
+                element: <Gallery />
             },
             {
                 path: "/get-ticket",    

@@ -35,12 +35,17 @@ const SignIn = () => {
         
         
      })
-     .catch((err)=>{
-       console.log(err)
-       toast.error(err.message)
-       setLoading(false)
-
-     })
+     .catch((err) => {
+      console.log(err);
+      
+      const errorMessage = err.response 
+          ? err.response.data.message 
+          : err.message; 
+      
+      toast.error(errorMessage);
+      setLoading(false);
+  });
+  
   
     }
   }

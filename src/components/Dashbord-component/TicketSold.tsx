@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
+import { CiMenuFries } from "react-icons/ci";
 
 // Define a type for the outlet context
 type OutletContextType = {
@@ -55,10 +56,21 @@ const TicketSold: React.FC = () => {
     couple: "bg-green-100 border-green-600 text-green-600",
   };
 
+  // All possible ticket types, even those with zero count
+  const allTicketTypes = ["single", "vip", "vvip", "admin", "couple"];
+
+  // Initialize ticket counts to zero for each ticket type
   const ticketCounts = tickets.reduce<Record<string, number>>((acc, ticket) => {
     acc[ticket.ticketType] = (acc[ticket.ticketType] || 0) + 1;
     return acc;
   }, {});
+
+  // Ensure all ticket types are included in the ticketCounts object, even if the count is zero
+  allTicketTypes.forEach((type) => {
+    if (!(type in ticketCounts)) {
+      ticketCounts[type] = 0;
+    }
+  });
 
   // Handle change for checkboxes
   const handleCheckboxChange = (ticketId: string) => {
@@ -81,21 +93,22 @@ const TicketSold: React.FC = () => {
           <div className="h-[2px] w-full bg-black rounded"></div>
           <div className="h-[2px] w-full bg-black rounded"></div>
         </button>
+        {/* <CiMenuFries /> */}
       </div>
 
       {/* Summary Cards */}
-      <div className="flex gap-6 justify-between">
+      <div className="flex gap-6 justify-center flex-wrap mb-11">
         {Object.keys(ticketCounts).map((ticketType) => (
           <div
             key={ticketType}
-            className="md:w-[30%] w-[34%] md:h-32 h-24 md:p-9 p-1 rounded-lg shadow bg-white flex flex-col items-center justify-center md:gap-5 gap-1 mb-9"
+            className="md:w-[30%] w-[45%] md:h-32 h-24 md:p-9 p-1 rounded-lg shadow bg-white flex flex-col items-center justify-center md:gap-5 gap-1 "
           >
             <button
               className={`md:w-32 px-1 py-1 text-center rounded border font-bold ${ticketClassMap[ticketType] || "bg-gray-100 border-gray-400 text-gray-600"}`}
             >
               ✨{ticketType.charAt(0).toUpperCase() + ticketType.slice(1)}
             </button>
-            <p className="text-4xl font-bold">{ticketCounts[ticketType] || 0}</p>
+            <p className="text-4xl font-bold">{ticketCounts[ticketType]}</p>
           </div>
         ))}
       </div>
