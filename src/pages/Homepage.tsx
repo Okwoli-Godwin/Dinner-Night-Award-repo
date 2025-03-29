@@ -10,7 +10,7 @@ import AdvertCarousel from "../components/advertCarousel/AdvertCarousel";
 
 
 import img from "../images/gif.gif";
-import Gallery from "./Gallery";
+// import Gallery from "./Gallery";
 // import BusinessAdvertSkeleton from "../components/businessAdvertCarousel/BusinessAdvertSkeleton";
 
 const Homepage = () => {

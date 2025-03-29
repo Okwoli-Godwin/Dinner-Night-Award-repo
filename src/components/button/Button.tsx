@@ -8,7 +8,7 @@ type ButtonProps = {
   onClick?: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ text, variant = "primary", size = "medium", onClick }) => {
+const Button: React.FC<ButtonProps> = ({ text, variant = "primary", size = "medium" }) => {
   return (
     <button className={`${styles.button} ${styles[variant]} ${styles[size]}`}>
       {text} 

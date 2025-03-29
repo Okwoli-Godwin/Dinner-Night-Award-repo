@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
-import { CiMenuFries } from "react-icons/ci";
+// import { CiMenuFries } from "react-icons/ci";
 
 // Define a type for the outlet context
 type OutletContextType = {

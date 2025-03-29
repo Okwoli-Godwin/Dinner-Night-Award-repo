@@ -168,16 +168,20 @@
 @media (max-width: 425px) {
     .text{
         text-align: center;
+        font-size: 23px
     }
     .ticket{
         width: 100%;
         margin-bottom: 25px;
     }
     .bottom_container{
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
     .h2{
         font-size: 25px;
+    }
+    .content_holder{
+        width: 95%,
     }
 }
