@@ -11,32 +11,31 @@ const SignIn = () => {
 
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const LoginMessage = (e: FormEvent) => {
-    e.preventDefault();
-    if (!email) {
-      toast.error("User's email is Required");
-    } else {
-      setLoading(true);
-      const data = { email };
-      console.log(data);
-
-      const url = "https://our-lady-database.onrender.com/api/login";
-      axios
-        .post(url, data)
-        .then((res: any) => {
-          setLoading(true);
-          toast.success("LogIn successful");
-          setTimeout(() => {
-            nav("/dashboard");
-          }, 3000);
-          console.log("response" + res);
-        })
-        .catch((err: any) => {
-          console.log(err);
-          toast.error(err.message);
-          setLoading(false);
-        });
+     const url = "https://our-lady-database.onrender.com/api/login"
+     axios.post(url, data)
+     .then(res =>{
+      setLoading(true)
+       toast.success('LogIn successful')
+       setTimeout(() => {
+         nav('/dashboard')
+       }, 3000);
+        console.log('response'+res);
+        
+        
+        
+     })
+     .catch((err) => {
+      console.log(err);
+      
+      const errorMessage = err.response 
+          ? err.response.data.message 
+          : err.message; 
+      
+      toast.error(errorMessage);
+      setLoading(false);
+  });
+  
+ 
     }
   };
 

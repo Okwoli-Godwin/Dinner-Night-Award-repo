@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
 
   return (
     <section
-      className={styles.hero}
+      className={styles.hero1}
       style={{
         backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
         backgroundRepeat: "no-repeat",

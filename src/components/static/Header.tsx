@@ -65,6 +65,14 @@ const Header: React.FC = () => {
         >
           Home
         </NavLink>
+
+        <NavLink
+          to="/gallery"
+          className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.activeNavLink}` : styles.navLink)}
+          onClick={closeMobileMenu}
+        >
+          Gallery
+        </NavLink>
         <NavLink
           to="/vote"
           className={({ isActive }) =>

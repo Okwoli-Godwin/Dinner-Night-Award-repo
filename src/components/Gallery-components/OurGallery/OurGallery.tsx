@@ -1,4 +1,5 @@
-import Gallery from "./Gallery"
+import Gallery from "../../../pages/Gallery"
+
 
 const OurGallery = () => {
   return (

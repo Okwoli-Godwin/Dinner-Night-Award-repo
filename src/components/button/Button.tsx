@@ -10,8 +10,8 @@ type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = ({ text, variant = "primary", size = "medium", onClick }) => {
   return (
-    <button className={`${styles.button} ${styles[variant]} ${styles[size]}`} onClick={onClick}>
-      {text}
+    <button className={`${styles.button} ${styles[variant]} ${styles[size]}`}>
+      {text} 
     </button>
   )
 }
