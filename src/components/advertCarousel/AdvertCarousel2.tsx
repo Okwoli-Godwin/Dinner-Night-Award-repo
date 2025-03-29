@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Advert1 from "../../images/advert1.jpeg";
 import Advert2 from "../../images/advert2.jpeg";
-import Modal from "../modal/Modal";
+// import Modal from "../modal/Modal";
 
 export interface Card {
   id: number;
@@ -56,8 +56,12 @@ export default function AdvertCarousel2({ isReverse }: AdvertCarouselProps) {
   ];
   // const [reverseAnimation, setReverseAnimation] = useState(false);
   // const [isAnimationPaused, setIsAnimationPaused] = useState(false);
-  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
-  const [showModal, setShowModal] = useState(false);
+  const [
+    // selectedCard, 
+    ,setSelectedCard] = useState<Card | null>(null);
+  const [
+    // showModal, 
+    ,setShowModal] = useState(false);
 
   // const handleDoubleClick = () => {
   //   setReverseAnimation((prev) => !prev);
@@ -146,9 +150,11 @@ export default function AdvertCarousel2({ isReverse }: AdvertCarouselProps) {
             ))}
           </ul>
 
-          {showModal && (
-            <Modal cards={selectedCard} onClose={() => setShowModal(false)} />
-          )}
+          {/* {showModal && (
+            <Modal
+             cards={selectedCard}
+              onClose={() => setShowModal(false)} />
+          )} */}
         </div>
       </section>
     </div>

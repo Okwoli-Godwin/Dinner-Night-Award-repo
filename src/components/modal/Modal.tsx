@@ -1,23 +1,40 @@
 import { motion, AnimatePresence } from "framer-motion";
 import "./Modal.css"; // CSS file for styling
 import { X } from "lucide-react";
-import { ReactElement } from "react";
+// import { ReactElement } from "react";
+import Typography from "../typography/Typography";
 
-interface Card {
+// interface Card {
+//   id: number;
+//   image: string;
+//   name: string;
+//   buttonLabel: string;
+//   address: string;
+//   location: string;
+//   website: string;
+//   businessDescription?: string | null;
+//   socialMediaLink?: string | null;
+//   socialMedia?: ReactElement[];
+// }
+
+interface Business {
+  phoneNumber: number;
+  image: any;
   id: number;
-  image: string;
+ url: string;
   name: string;
+  email: string;
   buttonLabel: string;
   address: string;
   location: string;
   website: string;
-  businessDescription?: string | null;
-  socialMediaLink?: string | null;
-  socialMedia?: ReactElement[];
+  businessDescription?: string;
+  socialMediaLink?: string;
+  socialMedia?: [];
 }
 
 interface ModalProps {
-  cards: Card | null;
+  cards: Business | null;
   onClose: () => void;
 }
 
@@ -41,17 +58,20 @@ const Modal = ({ cards, onClose }: ModalProps) => {
               <X size={35} color="red" />
             </button>
             <img
-              src={cards.image}
+              src={cards.image.url}
               alt={cards.name}
               className="modal-image"
               loading="lazy"
             />
-            <h2>{cards.name}</h2>
+            <Typography variant="h3">{cards.name}</Typography>
             <p>
               <strong>Address:</strong> {cards.address}
             </p>
             <p>
-              <strong>Location:</strong> {cards.location}
+              <strong>Phone:</strong> {cards.phoneNumber}
+            </p>
+            <p>
+              <strong>Email:</strong> {cards.email}
             </p>
             <p>
               <strong>Website:</strong>{" "}

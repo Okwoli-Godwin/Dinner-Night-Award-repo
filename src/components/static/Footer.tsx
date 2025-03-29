@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Footer.module.css";
+import styles from "./footer.module.css";
 import Typography from "../typography/Typography";
 import {
   FaWhatsapp,
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             className={styles.logo}
           />
           <Typography variant="h6">
-            Catholic Youth Of Nigeria (CYON), Lagos.
+            Catholic Youth Organization Of Nigeria (CYON), Lagos.
           </Typography>
           <Typography variant="body2">Our Lady Of The Rosary (OLR).</Typography>
         </div>
