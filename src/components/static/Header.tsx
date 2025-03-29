@@ -87,11 +87,11 @@ const Header: React.FC = () => {
         <div className={styles.buttonGroup}>
           {/* <Button
             onClick={() => {
-              navigate("/signIn");
+              navigate("/gallery");
               closeMobileMenu();
             }}
             variant="special"
-            text="Sign In"
+            text="Gallery"
           /> */}
           <Button
             onClick={() => {
