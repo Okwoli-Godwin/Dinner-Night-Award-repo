@@ -1,0 +1,83 @@
+.DownloadBody{
+    width: 100%;
+    height: 100vh;
+    background: whitesmoke;
+    padding: 20px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.ImageHolder{
+    width: 65%;
+    height: 85%;
+    /* background: #000; */
+}
+
+.DownloadImage{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    box-shadow: 3px 3px 3px 3px lightgray;
+
+}
+
+.buttonHolder{
+    width: 80%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+   & button{
+    border: 1px  solid gray;
+    padding: 10px;
+    /* height: 20px; */
+    width: 20%;
+    color: white;
+    font-weight: 600;
+    }
+
+    & .a{
+        background: green;
+    }
+
+    & .b{
+        background: rgba(121, 3, 3, 0.808);
+    }
+}
+
+@media (max-width:425px) {
+    .DownloadBody{
+        padding: 10px;
+    }
+
+    .ImageHolder{
+        width: 90%;
+    }
+
+    .buttonHolder{
+        & button{
+            width: 40%;
+            padding: 5px;
+        }
+    }
+}
+
+
+
+
+@media (max-width:320px) {
+    .DownloadBody{
+        padding: 10px;
+    }
+
+
+
+    .ImageHolder{
+        width: 100%;
+    }
+}

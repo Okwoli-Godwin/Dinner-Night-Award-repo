@@ -8,6 +8,7 @@ import TicketSold from "../components/Dashbord-component/TicketSold";
 import Gallery from "../pages/Gallery"
 import PaymentConfirmation from "../pages/PaymentConfirmation";
 import SetBusiness from "../components/Gallery-components/Dashbord-component/setBusiness/SetBusiness";
+import Download from "../components/Download_setion/Download";
 
 
 export const Element = createBrowserRouter([
@@ -23,6 +24,7 @@ export const Element = createBrowserRouter([
                 path:'/gallery',
                 element: <Gallery />
             },
+         
             {
                 path: "/get-ticket",    
                 element: <Ticket />
@@ -36,6 +38,10 @@ export const Element = createBrowserRouter([
     {
         path: '/signIn',
         element: <SignIn />
+    },
+    {
+        path:'/download/:imageUrl',
+        element: <Download/>
     },
     {
         path: "/dashboard",
