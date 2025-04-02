@@ -200,7 +200,7 @@ const CategoryList: React.FC = () => {
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen bg-gradient-to-br from-yellow-50 via-white to-green-50">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 space-y-4 sm:space-y-0">
+            {/* <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 space-y-4 sm:space-y-0">
                 <div>
                     <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Voting Categories</h1>
                     <p className="text-gray-600">Select a category to vote in</p>
@@ -213,7 +213,7 @@ const CategoryList: React.FC = () => {
                 >
                     Create New Category
                 </motion.button>
-            </div>
+            </div> */}
 
             {(error || deleteError) && (
                 <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-yellow-700">
@@ -231,7 +231,7 @@ const CategoryList: React.FC = () => {
                         transition={{ delay: index * 0.1 }}
                     >
                         <div className="p-6 cursor-pointer relative" onClick={() => navigate(`/vote/contestantslist/${category._id}`)}>
-                            <button
+                            {/* <button
                                 onClick={(e) => handleDeleteCategory(category._id, e)}
                                 disabled={isDeleting}
                                 className="absolute top-4 right-4 p-2 text-gray-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
@@ -239,7 +239,7 @@ const CategoryList: React.FC = () => {
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                 </svg>
-                            </button>
+                            </button> */}
                             <div className="w-16 h-16 bg-green-100 rounded-full mb-4 flex items-center justify-center">
                                 <span className="text-2xl text-green-600 font-semibold">
                                     {category.name.charAt(0).toUpperCase()}

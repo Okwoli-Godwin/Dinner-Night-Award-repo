@@ -40,12 +40,9 @@ export const Element = createBrowserRouter([
 		path: '/signIn',
 		element: <SignIn />,
 	},
+	
 	{
 		path: '/vote',
-		element: <CreateCategory />,
-	},
-	{
-		path: '/vote/categorylist',
 		element: <CategoryList />,
 	},
 	{
@@ -63,6 +60,10 @@ export const Element = createBrowserRouter([
 			{
 				path: '/dashboard/setBusiness',
 				element: <SetBusiness />,
+			},
+			{
+				path: 'dashboard/vote/createCategory',
+				element: <CreateCategory />,
 			},
 		],
 	},
