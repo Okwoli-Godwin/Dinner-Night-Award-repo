@@ -10,8 +10,8 @@ const DashboardLayout: React.FC = () => {
       {/* Sidebar */}
       <div
         className={`${
-          open ? "absolute left-0 w-64 h-full" : "hidden"
-        } bg-black md:block md:w-[25%] md:relative`}
+          open ? "absolute left-0 w-40 " : "hidden"
+        } md:block md:w-[20%] md:relative h-full  bg-black`}
       >
         <Dashboardside open={open} setOpen={setOpen} />
       </div>

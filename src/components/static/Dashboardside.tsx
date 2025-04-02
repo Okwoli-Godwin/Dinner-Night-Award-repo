@@ -8,24 +8,24 @@ interface DashboardsideProps {
 }
 
 const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
-  <div className={`w-full h-full bg-gray-300 flex flex-col p-3 ${open ? "block" : "hidden"} md:block`}>
+  <div className={`md:w-full w-52 h-full bg-gray-300 flex flex-col p-3  ${open ? "block md " : "hidden"} md:block`}>
     {/* Logo Section */}
-    <div className="w-[95%] h-[20%] flex items-center gap-3">
-      <img src={logo} alt="Logo" className="md:w-10 w-7" />
-      <p className="md:text-3xl text-2xl font-extrabold text-black">OLR CYON</p>
+    <div className="w-[95%]  h-[20%] mb-4 flex items-center gap-3">
+      <img src={logo} alt="Logo" className="md:w-7 w-7" />
+      <p className="md:text-2xl text-2xl font-extrabold text-black">OLR CYON</p>
     </div>
 
     {/* Navigation Links */}
-    <div className="w-[95%] h-[35%] flex flex-col gap-2 text-black text-2xl">
+    <div className="w-[95%] h-[65%] flex flex-col gap-5 text-black  ">
       <NavLink
         to="/dashboard"
         className={({ isActive }) =>
           `font-extrabold py-2 px-2 w-full cursor-pointer hover:bg-gray-400 rounded hover:shadow flex gap-2 ${
-            isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
+            isActive ? "text-yellow-black shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
       >
-        <LucideTicketsPlane />
+        {/* <LucideTicketsPlane /> */}
         <span className="font-bold">Ticket Sold Out</span>
       </NavLink>
       <NavLink
@@ -38,17 +38,7 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
       >
         <span className="font-bold">Visitors</span>
       </NavLink>
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          `font-extrabold py-2 px-2 w-full cursor-pointer hover:bg-gray-400 rounded hover:shadow flex gap-2 ${
-            isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
-          }`
-        }
-      >
-        <LucideTicketsPlane />
-        <span className="font-bold">Home</span>
-      </NavLink>
+   
     </div>
 
     {/* Logout Button */}
