@@ -2,39 +2,84 @@
 
 import type React from "react"
 import { useState } from "react"
-import axios from "axios"
+import axios, { type AxiosError } from "axios" // Import AxiosError type
 import { MdKeyboardDoubleArrowRight } from "react-icons/md"
 import styles from "./Ticket.module.css"
 import img1 from "../assets/ticket1.jpg"
 import img3 from "../assets/ticket3.jpg"
 import img4 from "../assets/ticket4.jpg"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "../components/ui/dialog"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "../components/ui/dialog"
 import { Button } from "../components/ui/button"
 import { Input } from "../components/ui/input"
 import { Label } from "../components/ui/label"
 import { useNavigate } from "react-router-dom"
 
-const ticketOptions = [
+// Define a proper type for ticket options
+interface TicketOption {
+  title: string
+  price: number
+  ticketType: string
+  image: string
+}
+
+// Define interface for API responses
+interface PaymentResponse {
+  authorizationUrl: string
+  reference: string
+  status?: string
+  message?: string
+}
+
+interface VerificationResponse {
+  status: string
+  message?: string
+  data?: Record<string, unknown>
+}
+
+// Define interface for form data
+interface TicketFormData {
+  name: string
+  email: string
+  ticketType: string
+  amount: number
+}
+
+const ticketOptions: TicketOption[] = [
   { title: "Singles", price: 6000, ticketType: "singles", image: img1 },
   { title: "Couples", price: 10000, ticketType: "couples", image: img4 },
   { title: "VIP", price: 60000, ticketType: "vip", image: img3 },
-  { title: "Table for 8", price: 100000, ticketType: "table", image: img3 },
+  { title: "Table for 8", price: 100000, ticketType: "tableFor8", image: img3 },
 ]
 
 const Ticket = () => {
   const [modalOpen, setModalOpen] = useState(false)
-  const [selectedTicket, setSelectedTicket] = useState<any>(null)
-  const [formData, setFormData] = useState({
+  const [selectedTicket, setSelectedTicket] = useState<TicketOption | null>(null)
+  const [formData, setFormData] = useState<TicketFormData>({
     name: "",
     email: "",
     ticketType: "",
+    amount: 0,
   })
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const navigate = useNavigate()
 
-  const openModal = (ticket: any) => {
+  const openModal = (ticket: TicketOption) => {
     setSelectedTicket(ticket)
-    setFormData({ name: "", email: "", ticketType: ticket.ticketType })
+    setFormData({
+      name: "",
+      email: "",
+      ticketType: ticket.ticketType,
+      amount: ticket.price,
+    })
+    setError(null)
     setModalOpen(true)
   }
 
@@ -49,45 +94,62 @@ const Ticket = () => {
   const verifyPayment = async (reference: string) => {
     try {
       console.log("Verifying payment for reference:", reference)
-  
-      const response = await axios.get(`https://our-lady-database.onrender.com/api/verify-payment/${reference}`)
-  
+
+      const response = await axios.get<VerificationResponse>(
+        `https://our-lady-database.onrender.com/api/verify-payment/${reference}`,
+      )
+
       console.log("Payment verification response:", response.data)
-  
+
       if (response.data.status === "success") {
         navigate(`/payment-confirmation?reference=${reference}`)
       } else {
         alert("Payment verification failed. Please try again.")
         navigate(`/payment-confirmation?reference=${reference}`)
       }
-    } catch (error: any) {
-      console.error("Error verifying payment:", error.response?.data || error.message)
+    } catch (error) {
+      const axiosError = error as AxiosError<{ message: string }>
+      console.error("Error verifying payment:", axiosError.response?.data?.message || axiosError.message)
       alert("Failed to verify payment. Please try again.")
       navigate(`/payment-confirmation?reference=${reference}`)
     }
   }
-  
-  
 
   const handleBuyTicket = async () => {
     if (!formData.name || !formData.email) {
-      alert("Please fill in all fields.")
+      setError("Please fill in all fields.")
       return
     }
 
     if (!selectedTicket?.ticketType) {
-      alert("Please select a valid ticket.")
+      setError("Please select a valid ticket.")
       return
     }
 
-    const ticketData = {
-      ...formData,
-      ticketType: selectedTicket?.ticketType,
+    const ticketData: TicketFormData = {
+      name: formData.name,
+      email: formData.email,
+      ticketType: formData.ticketType,
+      amount: formData.amount,
     }
 
     setLoading(true)
+    setError(null)
+
     try {
-      const response = await axios.post("https://our-lady-database.onrender.com/api/buyTickets", ticketData)
+      console.log("Sending ticket data:", ticketData)
+
+      const response = await axios.post<PaymentResponse>(
+        "https://our-lady-database.onrender.com/api/buyTickets",
+        ticketData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      )
+
+      console.log("Purchase response:", response.data)
 
       if (response.data.authorizationUrl) {
         window.location.href = response.data.authorizationUrl
@@ -95,8 +157,9 @@ const Ticket = () => {
         verifyPayment(response.data.reference)
       }
     } catch (error) {
-      console.error("Error purchasing ticket:", error)
-      alert("Failed to initialize payment. Please try again.")
+      const axiosError = error as AxiosError<{ message: string }>
+      console.error("Error purchasing ticket:", axiosError)
+      setError(axiosError.response?.data?.message || "Failed to initialize payment. Please try again.")
     } finally {
       setLoading(false)
     }
@@ -157,6 +220,11 @@ const Ticket = () => {
             <DialogTitle>Enter Your Details</DialogTitle>
             <DialogDescription>Please provide your information to purchase the ticket.</DialogDescription>
           </DialogHeader>
+          {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <span className="block sm:inline">{error}</span>
+            </div>
+          )}
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="name" className="text-right">
@@ -181,7 +249,13 @@ const Ticket = () => {
               <Label htmlFor="ticketType" className="text-right">
                 Ticket Type
               </Label>
-              <Input id="ticketType" name="ticketType" value={formData.ticketType} readOnly className="col-span-3" />
+              <Input id="ticketType" value={selectedTicket?.title || ""} readOnly className="col-span-3" />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="amount" className="text-right">
+                Amount
+              </Label>
+              <Input id="amount" value={`₦${formData.amount.toLocaleString()}`} readOnly className="col-span-3" />
             </div>
           </div>
           <DialogFooter>
@@ -199,3 +273,4 @@ const Ticket = () => {
 }
 
 export default Ticket
+

@@ -1,7 +1,7 @@
 import Typography from "../components/typography/Typography";
 import { useState, useEffect } from "react";
 import styles from "./Gallery.module.css";
-import toast, { Toaster } from "react-hot-toast";
+import  { Toaster } from "react-hot-toast";
 import { BarLoader } from 'react-spinners'
 import { useNavigate } from "react-router-dom";
 

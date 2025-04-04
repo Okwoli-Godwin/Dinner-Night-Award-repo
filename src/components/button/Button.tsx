@@ -1,3 +1,5 @@
+"use client"
+
 import type React from "react"
 import styles from "./button.module.css"
 
@@ -8,10 +10,13 @@ type ButtonProps = {
   onClick?: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ text, variant = "primary", size = "medium" }) => {
+const Button: React.FC<ButtonProps> = ({ text, variant = "primary", size = "medium", onClick }) => {
   return (
-    <button className={`${styles.button} ${styles[variant]} ${styles[size]}`}>
-      {text} 
+    <button
+      className={`${styles.button} ${styles[variant]} ${styles[size]}`}
+      onClick={onClick} // Add the onClick handler here
+    >
+      {text}
     </button>
   )
 }
