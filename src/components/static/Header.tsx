@@ -1,4 +1,4 @@
-// import Button from "../button/Button";
+import Button from "../button/Button";
 import Typography from "../typography/Typography";
 import CyonLogo from "../../images/cyonlogo1.png";
 import type React from "react";
@@ -7,11 +7,12 @@ import styles from "./header.module.css";
 import { NavLink } from "react-router-dom";
 import { X } from "lucide-react";
 import { Menu } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
- 
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -83,6 +84,8 @@ const Header: React.FC = () => {
         >
           Vote
         </NavLink>
+        
+        <div className={styles.specialGetTicket}>
         <NavLink
           to="/get-ticket"
           className={({ isActive }) =>
@@ -93,8 +96,27 @@ const Header: React.FC = () => {
           onClick={closeMobileMenu}
         >
         Get Ticket
-        </NavLink>
-        
+          </NavLink>
+        </div>
+          
+        <div className={styles.buttonGroup}>
+          {/* <Button
+            onClick={() => {
+              navigate("/gallery");
+              closeMobileMenu();
+            }}
+            variant="special"
+            text="Gallery"
+          /> */}
+          <Button
+            onClick={() => {
+              navigate("/get-ticket");
+              closeMobileMenu();
+            }}
+            variant="special2"
+            text="Get Ticket"
+          />
+        </div>
       </nav>
 
       <div className={styles.hamburger}>
