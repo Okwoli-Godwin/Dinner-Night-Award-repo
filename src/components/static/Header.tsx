@@ -1,4 +1,4 @@
-import Button from "../button/Button";
+// import Button from "../button/Button";
 import Typography from "../typography/Typography";
 import CyonLogo from "../../images/cyonlogo1.png";
 import type React from "react";
@@ -7,12 +7,11 @@ import styles from "./header.module.css";
 import { NavLink } from "react-router-dom";
 import { X } from "lucide-react";
 import { Menu } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navigate = useNavigate();
+ 
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

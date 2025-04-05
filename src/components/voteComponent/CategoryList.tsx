@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { MdKeyboardBackspace } from 'react-icons/md';
+import LoadingSpinner from '../loading/LoadingSpinner';
 interface Category {
 	_id: string;
 	name: string;
@@ -13,7 +14,7 @@ const CategoryList: React.FC = () => {
 	const [categories, setCategories] = useState<Category[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [error, setError] = useState<string | null>(null);
-	const [isDeleting, setIsDeleting] = useState<boolean>(false);
+	// const [isDeleting, setIsDeleting] = useState<boolean>(false);
 	const [deleteError, setDeleteError] = useState<string | null>(null);
 
 	const fetchCategories = async () => {
@@ -38,40 +39,36 @@ const CategoryList: React.FC = () => {
 		fetchCategories();
 	}, []);
 
-	const handleDeleteCategory = async (
-		categoryId: string,
-		event: React.MouseEvent<HTMLButtonElement>
-	) => {
-		event.stopPropagation();
-		setIsDeleting(true);
-		setDeleteError(null);
+	// const handleDeleteCategory = async (
+	// 	categoryId: string,
+	// 	event: React.MouseEvent<HTMLButtonElement>
+	// ) => {
+	// 	event.stopPropagation();
+	// 	setIsDeleting(true);
+	// 	setDeleteError(null);
 
-		try {
-			const response = await fetch(
-				`https://our-lady-database.onrender.com/api/deleteCategory/${categoryId}`,
-				{
-					method: 'DELETE',
-				}
-			);
+	// 	try {
+	// 		const response = await fetch(
+	// 			`https://our-lady-database.onrender.com/api/deleteCategory/${categoryId}`,
+	// 			{
+	// 				method: 'DELETE',
+	// 			}
+	// 		);
 
-			if (!response.ok) {
-				throw new Error('Failed to delete category');
-			}
-			fetchCategories();
-		} catch (err) {
-			setDeleteError('Failed to delete category. Please try again.');
-		} finally {
-			setIsDeleting(false);
-		}
-	};
+	// 		if (!response.ok) {
+	// 			throw new Error('Failed to delete category');
+	// 		}
+	// 		fetchCategories();
+	// 	} catch (err) {
+	// 		setDeleteError('Failed to delete category. Please try again.');
+	// 	} finally {
+	// 		setIsDeleting(false);
+	// 	}
+	// };
 
 	if (isLoading) {
 		return (
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen bg-gradient-to-br from-yellow-50 via-white to-green-50">
-				<div className="flex justify-center items-center h-64">
-					<div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
-				</div>
-			</div>
+			<LoadingSpinner/>
 		);
 	}
 
