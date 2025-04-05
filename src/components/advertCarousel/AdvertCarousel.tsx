@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Modal from "../modal/Modal";
 import axios from "axios";
 import BusinessAdvertCarousel from "../businessAdvertCarousel/BusinessAdvertSkeleton";
+import toast from 'react-hot-toast';
 
 
 
@@ -47,9 +48,8 @@ export default function AdvertCarousel({
         const {businesses} = response.data
        setBusinessDetails(businesses)
         
-        console.log(response, businesses)
       } catch (err: any) {
-        console.error(`${err.message}`)
+        toast.error(`${err.message}`)
       } finally {
         setLoading(false)
       }
