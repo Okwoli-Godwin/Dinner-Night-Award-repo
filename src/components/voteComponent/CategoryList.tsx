@@ -200,7 +200,7 @@ const CategoryList: React.FC = () => {
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen bg-gradient-to-br from-yellow-50 via-white to-green-50">
-            {/* <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 space-y-4 sm:space-y-0">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 space-y-4 sm:space-y-0">
                 <div>
                     <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Voting Categories</h1>
                     <p className="text-gray-600">Select a category to vote in</p>
@@ -213,7 +213,7 @@ const CategoryList: React.FC = () => {
                 >
                     Create New Category
                 </motion.button>
-            </div> */}
+            </div>
 
             {(error || deleteError) && (
                 <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-yellow-700">

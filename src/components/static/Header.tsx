@@ -84,24 +84,18 @@ const Header: React.FC = () => {
         >
           Vote
         </NavLink>
-        <div className={styles.buttonGroup}>
-          {/* <Button
-            onClick={() => {
-              navigate("/gallery");
-              closeMobileMenu();
-            }}
-            variant="special"
-            text="Gallery"
-          /> */}
-          <Button
-            onClick={() => {
-              navigate("/get-ticket");
-              closeMobileMenu();
-            }}
-            variant="special2"
-            text="Get Ticket"
-          />
-        </div>
+        <NavLink
+          to="/get-ticket"
+          className={({ isActive }) =>
+            isActive
+              ? `${styles.navLink} ${styles.activeNavLink}`
+              : styles.navLink
+          }
+          onClick={closeMobileMenu}
+        >
+        Get Ticket
+        </NavLink>
+        
       </nav>
 
       <div className={styles.hamburger}>
