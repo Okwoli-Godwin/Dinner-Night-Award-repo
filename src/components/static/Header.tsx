@@ -1,66 +1,59 @@
-import Button from "../button/Button";
-import Typography from "../typography/Typography";
-import CyonLogo from "../../images/cyonlogo1.png";
-import type React from "react";
-import { useState, useEffect } from "react";
-import styles from "./header.module.css";
-import { NavLink } from "react-router-dom";
-import { X } from "lucide-react";
-import { Menu } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+"use client"
+
+import Button from "../button/Button"
+import Typography from "../typography/Typography"
+import CyonLogo from "../../images/cyonlogo1.png"
+import type React from "react"
+import { useState, useEffect } from "react"
+import styles from "./header.module.css"
+import { NavLink, useNavigate } from "react-router-dom"
+import { X, Menu } from "lucide-react"
 
 const Header: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const navigate = useNavigate()
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
 
   const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+    setIsMobileMenuOpen(false)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
       if (isMobileMenuOpen) {
-        closeMobileMenu();
+        closeMobileMenu()
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isMobileMenuOpen]);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [isMobileMenuOpen])
+
+  const handleGetTicket = () => {
+    // Use navigate with a complete path to ensure proper routing
+    navigate("/get-ticket")
+    closeMobileMenu()
+  }
 
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
-        <img
-          src={CyonLogo || "/placeholder.svg"}
-          alt="Logo"
-          className={styles.logo}
-        />
+        <img src={CyonLogo || "/placeholder.svg"} alt="Logo" className={styles.logo} />
         <Typography variant="h6" className={styles.brand}>
           CYON OLR
         </Typography>
       </div>
 
-      <nav
-        className={`${styles.nav} ${
-          isMobileMenuOpen ? styles.navMobileOpen : ""
-        }`}
-      >
+      <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navMobileOpen : ""}`}>
         <NavLink
           to="/"
-          className={({ isActive }) =>
-            isActive
-              ? `${styles.navLink} ${styles.activeNavLink}`
-              : styles.navLink
-          }
+          className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.activeNavLink}` : styles.navLink)}
           onClick={closeMobileMenu}
         >
           Home
@@ -75,11 +68,7 @@ const Header: React.FC = () => {
         </NavLink>
         <NavLink
           to="/vote"
-          className={({ isActive }) =>
-            isActive
-              ? `${styles.navLink} ${styles.activeNavLink}`
-              : styles.navLink
-          }
+          className={({ isActive }) => (isActive ? `${styles.navLink} ${styles.activeNavLink}` : styles.navLink)}
           onClick={closeMobileMenu}
         >
           Vote
@@ -100,22 +89,7 @@ const Header: React.FC = () => {
         </div>
           
         <div className={styles.buttonGroup}>
-          {/* <Button
-            onClick={() => {
-              navigate("/gallery");
-              closeMobileMenu();
-            }}
-            variant="special"
-            text="Gallery"
-          /> */}
-          <Button
-            onClick={() => {
-              navigate("/get-ticket");
-              closeMobileMenu();
-            }}
-            variant="special2"
-            text="Get Ticket"
-          />
+          <Button onClick={handleGetTicket} variant="special2" text="Get Ticket" />
         </div>
       </nav>
 
@@ -131,7 +105,8 @@ const Header: React.FC = () => {
         )}
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
+

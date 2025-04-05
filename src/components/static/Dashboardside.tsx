@@ -1,4 +1,4 @@
-import { LucideTicketsPlane } from "lucide-react";
+// import { LucideTicketsPlane } from "lucide-react";
 import logo from "../../images/cyonlogo.png";
 import { NavLink } from "react-router-dom";
 
