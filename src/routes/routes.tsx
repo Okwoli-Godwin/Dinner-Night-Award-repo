@@ -55,7 +55,7 @@ export const Element = createBrowserRouter([
 		element: <ContestantList />,
 	},
 	{
-		path: '/',
+		path: '/dashboard',
 		element: <DashboardLayout />,
 		children: [
 			{
@@ -63,15 +63,15 @@ export const Element = createBrowserRouter([
 				element: <TicketSold />,
 			},
 			{
-				path: '/dashboard/setBusiness',
+				path: 'setBusiness',
 				element: <SetBusiness />,
 			},
 			{
-				path: 'dashboard/vote/createCategory',
+				path: 'vote/createCategory',
 				element: <CreateCategory />,
 			},
 			{
-				path: 'dashboard/vote/seeAllVotes',
+				path: 'vote/seeAllVotes',
 				element: <SeeAllVotes/>,
 			},
 		],

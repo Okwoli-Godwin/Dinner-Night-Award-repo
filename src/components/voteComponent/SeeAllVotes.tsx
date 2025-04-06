@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './SeeAllVotes.module.css';
+import toast from 'react-hot-toast';
+import LoadingSpinner from '../loading/LoadingSpinner';
 import {
 	FaCalendarAlt,
 	FaArrowLeft,
@@ -38,7 +40,7 @@ const SeeAllVotes = () => {
 				setFilteredData(response.data);
 			} catch (err: any) {
 				setError('Something went wrong while fetching data.');
-				console.error(err);
+				toast.error(`${err.message}`);
 			} finally {
 				setLoading(false);
 			}
@@ -99,7 +101,21 @@ const SeeAllVotes = () => {
 	const currentData = filteredData.slice(
 		(currentPage - 1) * ITEMS_PER_PAGE,
 		currentPage * ITEMS_PER_PAGE
-	);
+  );
+  
+  if (loading) {
+    return (<LoadingSpinner />);
+  }
+
+  
+
+  if (error) {
+    return (
+      <div className={styles.errorMessage}>
+        <p>{error}</p>
+      </div>
+    );
+  }
 
 	return (
 		<div className={styles.container}>
@@ -155,8 +171,8 @@ const SeeAllVotes = () => {
 				</div>
 			</div>
 
-			{loading && <p>Loading votes...</p>}
-			{error && <div className={styles.errorMessage}>{error}</div>}
+			
+		
 
 			<div className={styles.cardGrid}>
 				{!loading &&
