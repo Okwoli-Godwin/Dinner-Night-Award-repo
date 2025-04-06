@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import styles from "./UploadImage.module.css";
+import { motion } from 'framer-motion';
+
 
 const UploadImage = () => {
   const [images, setImages] = useState<File[]>([]);
@@ -57,7 +59,12 @@ const UploadImage = () => {
   };
 
   return (
-    <div className={styles.uploadContainer}>
+    <motion.div
+  
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.5 }}
+      className={styles.uploadContainer}>
       <h2 className={styles.title}>Upload Images</h2>
 
       <input
@@ -100,7 +107,7 @@ const UploadImage = () => {
           "Upload"
         )}
       </button>
-    </div>
+    </motion.div>
   );
 };
 

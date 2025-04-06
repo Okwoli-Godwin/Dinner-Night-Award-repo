@@ -76,7 +76,7 @@ export const Element = createBrowserRouter([
 				element: <SeeAllVotes/>,
 			},
 			{
-				path: 'vote/uploadImage',
+				path: 'uploadImage',
 				element: <UploadImage/>,
 			},
 		],

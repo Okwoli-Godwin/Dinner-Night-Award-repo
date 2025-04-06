@@ -3,6 +3,7 @@ import axios from 'axios';
 import styles from './SeeAllVotes.module.css';
 import toast from 'react-hot-toast';
 import LoadingSpinner from '../loading/LoadingSpinner';
+import { motion } from 'framer-motion';
 import {
 	FaCalendarAlt,
 	FaArrowLeft,
@@ -118,7 +119,12 @@ const SeeAllVotes = () => {
   }
 
 	return (
-		<div className={styles.container}>
+		<motion.div
+		
+		initial={{ opacity: 0, y: 20 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 0.5 }}
+			className={styles.container}>
 			<h2 className={styles.title}>All Votes</h2>
 			<div className={styles.filterSection}>
 				<div className={styles.flexnowrap}>
@@ -212,7 +218,7 @@ const SeeAllVotes = () => {
 					</button>
 				</div>
 			)}
-		</div>
+		</motion.div>
 	);
 };
 
