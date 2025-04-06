@@ -15,7 +15,7 @@ const CategoryList: React.FC = () => {
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [error, setError] = useState<string | null>(null);
 	// const [isDeleting, setIsDeleting] = useState<boolean>(false);
-	const [deleteError, setDeleteError] = useState<string | null>(null);
+	// const [deleteError, setDeleteError] = useState<string | null>(null);
 
 	const fetchCategories = async () => {
 		try {
@@ -91,9 +91,9 @@ const CategoryList: React.FC = () => {
 				</motion.button>
 			</div>
 
-			{(error || deleteError) && (
+			{(error ) && (
 				<div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-yellow-700">
-					{error || deleteError}
+					{error }
 				</div>
 			)}
 

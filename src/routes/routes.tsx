@@ -12,6 +12,7 @@ import Download from "../components/Download_setion/Download";
 import CreateCategory from '../components/voteComponent/CreateCategory';
 import ContestantList from '../components/voteComponent/ContestantList';
 import CategoryList from '../components/voteComponent/CategoryList';
+import SeeAllVotes from "../components/voteComponent/SeeAllVotes";
 
 export const Element = createBrowserRouter([
 	{
@@ -54,7 +55,7 @@ export const Element = createBrowserRouter([
 		element: <ContestantList />,
 	},
 	{
-		path: '/dashboard',
+		path: '/',
 		element: <DashboardLayout />,
 		children: [
 			{
@@ -68,6 +69,10 @@ export const Element = createBrowserRouter([
 			{
 				path: 'dashboard/vote/createCategory',
 				element: <CreateCategory />,
+			},
+			{
+				path: 'dashboard/vote/seeAllVotes',
+				element: <SeeAllVotes/>,
 			},
 		],
 	},
