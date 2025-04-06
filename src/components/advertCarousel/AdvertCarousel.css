@@ -13,7 +13,7 @@ section {
   overflow: hidden;
   user-select: none;
   gap: var(--gap);
-  border: 2px dashed lightgray;
+  /* border: 2px dashed lightgray; */
 }
 
 .marquee__content {

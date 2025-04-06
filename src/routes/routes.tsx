@@ -13,6 +13,7 @@ import CreateCategory from '../components/voteComponent/CreateCategory';
 import ContestantList from '../components/voteComponent/ContestantList';
 import CategoryList from '../components/voteComponent/CategoryList';
 import SeeAllVotes from "../components/voteComponent/SeeAllVotes";
+import UploadImage from "../components/voteComponent/UploadImage";
 
 export const Element = createBrowserRouter([
 	{
@@ -73,6 +74,10 @@ export const Element = createBrowserRouter([
 			{
 				path: 'vote/seeAllVotes',
 				element: <SeeAllVotes/>,
+			},
+			{
+				path: 'vote/uploadImage',
+				element: <UploadImage/>,
 			},
 		],
 	},
