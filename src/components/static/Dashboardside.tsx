@@ -29,15 +29,51 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
         <span className="font-bold">Ticket Sold Out</span>
       </NavLink>
       <NavLink
-        to="/visitor"
+        to="/dashboard/setBussiness"
         className={({ isActive }) =>
           `font-extrabold py-2 px-2 w-full cursor-pointer hover:bg-gray-400 rounded hover:shadow flex gap-2 ${
             isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
       >
-        <span className="font-bold">Visitors</span>
+        <span className="font-bold">Set Businness</span>
       </NavLink>
+   
+      <NavLink
+        to="/dashboard/vote/createCategory"
+        className={({ isActive }) =>
+          `font-extrabold py-2 px-2 w-full cursor-pointer hover:bg-gray-400 rounded hover:shadow flex gap-2 ${
+            isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
+          }`
+        }
+      >
+        <span className="font-bold">Create Category</span>
+      </NavLink>
+   
+      <NavLink
+        to="/dashboard/vote/seeAllVotes"
+        className={({ isActive }) =>
+          `font-extrabold py-2 px-2 w-full cursor-pointer hover:bg-gray-400 rounded hover:shadow flex gap-2 ${
+            isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
+          }`
+        }
+      >
+        <span className="font-bold">See All Votes</span>
+      </NavLink>
+   
+   
+      <NavLink
+        to="/dashboard/uploadImage"
+        className={({ isActive }) =>
+          `font-extrabold py-2 px-2 w-full cursor-pointer hover:bg-gray-400 rounded hover:shadow flex gap-2 ${
+            isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
+          }`
+        }
+      >
+        <span className="font-bold">Upload Images</span>
+      </NavLink>
+   
+        
    
     </div>
 

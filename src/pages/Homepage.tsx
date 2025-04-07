@@ -10,22 +10,39 @@ import AdvertCarousel from "../components/advertCarousel/AdvertCarousel";
 
 
 import img from "../images/gif.gif";
+import { useState, useEffect } from "react";
+import LoadingSpinner from "../components/loading/LoadingSpinner";
 // import Gallery from "./Gallery";
 // import BusinessAdvertSkeleton from "../components/businessAdvertCarousel/BusinessAdvertSkeleton";
 
 const Homepage = () => {
+  const [isLoading, setisLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setisLoading(false), 3000);
+  }
+    , []);
+  
+  if (isLoading) {
+    return (
+     
+        <LoadingSpinner />
+     
+    );
+  }
   return (
     <div className="relative">
       {/* <BusinessAdvertSkeleton/> */}
       <Hero />
       <WhatToExpect />
 
-      <div className="md:mt-[75px] mt-[2rem]">
+      {/* Comment one Advert  */}
+
+      {/* <div className="md:mt-[75px] mt-[2rem]">
         <Typography variant="h2" className="text-center mt-8">
           Business Advert
         </Typography>
         <AdvertCarousel isReverse={false} scrollSpeed={40} />
-      </div>
+      </div> */}
 
       <IntroSection />
       <EventCallToAction />

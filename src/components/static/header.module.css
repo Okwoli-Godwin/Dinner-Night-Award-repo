@@ -65,6 +65,10 @@
   cursor: pointer;
 }
 
+.specialGetTicket{
+  display: none;
+}
+
 .closeMenu {
   z-index: 10;
 }
@@ -94,6 +98,14 @@
     /* padding: 1rem 0; */
     width: 100%;
     text-align-last: center;
+  }
+
+  .buttonGroup{
+    display: none;
+  }
+
+  .specialGetTicket{
+    display: block;
   }
 
   .buttonGroup {

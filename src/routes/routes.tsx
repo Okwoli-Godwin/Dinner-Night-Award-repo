@@ -12,6 +12,8 @@ import Download from "../components/Download_setion/Download";
 import CreateCategory from '../components/voteComponent/CreateCategory';
 import ContestantList from '../components/voteComponent/ContestantList';
 import CategoryList from '../components/voteComponent/CategoryList';
+import SeeAllVotes from "../components/voteComponent/SeeAllVotes";
+import UploadImage from "../components/voteComponent/UploadImage";
 
 export const Element = createBrowserRouter([
 	{
@@ -62,12 +64,20 @@ export const Element = createBrowserRouter([
 				element: <TicketSold />,
 			},
 			{
-				path: '/dashboard/setBusiness',
+				path: 'setBusiness',
 				element: <SetBusiness />,
 			},
 			{
-				path: 'dashboard/vote/createCategory',
+				path: 'vote/createCategory',
 				element: <CreateCategory />,
+			},
+			{
+				path: 'vote/seeAllVotes',
+				element: <SeeAllVotes/>,
+			},
+			{
+				path: 'uploadImage',
+				element: <UploadImage/>,
 			},
 		],
 	},
