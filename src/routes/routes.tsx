@@ -14,6 +14,7 @@ import ContestantList from '../components/voteComponent/ContestantList';
 import CategoryList from '../components/voteComponent/CategoryList';
 import SeeAllVotes from "../components/voteComponent/SeeAllVotes";
 import UploadImage from "../components/voteComponent/UploadImage";
+import VisitorStats from "../components/voteComponent/VisitorStats";
 
 export const Element = createBrowserRouter([
 	{
@@ -66,6 +67,10 @@ export const Element = createBrowserRouter([
 			{
 				path: 'setBusiness',
 				element: <SetBusiness />,
+			},
+			{
+				path: 'visitor-stats',
+				element: <VisitorStats />,
 			},
 			{
 				path: 'vote/createCategory',
