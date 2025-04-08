@@ -1,7 +1,7 @@
-/* 
+/* Main container */
 .container {
 	display: grid;
-	
+	/* grid-template-columns: 1fr; */
 	gap: 20px;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -27,7 +27,7 @@
 	gap: 1rem;
 }
 
-
+/* Filter section */
 .filterSection {
 	display: flex;
 	flex-wrap: wrap;
@@ -91,7 +91,7 @@
 	background-color: #0056b3;
 }
 
-
+/* Cards displaying data */
 .card {
 	background-color: #f9f9f9;
 	padding: 15px;
@@ -108,7 +108,7 @@
 	margin-bottom: 10px;
 }
 
-
+/* Error handling */
 .errorMessage {
 	display: flex;
 	align-items: center;
@@ -125,7 +125,7 @@
 	margin-top: 10px;
 }
 
-
+/* Pagination */
 .pagination {
 	display: flex;
 	align-items: center;
@@ -161,13 +161,14 @@
 	font-size: 16px;
 }
 
-
+/* Grid Layout for Results */
 .results {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	gap: 20px;
 }
 
+/* Small screen (1 item per row) */
 @media (max-width: 550px) {
 	.sortButton {
 		font-size: 0.8rem;
@@ -188,87 +189,4 @@
 		font-size: 12px;
 		padding: 4px;
 	}
-} */
-
-
-.container {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.title {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #4caf50;
-}
-
-.message {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-top: 3rem;
-}
-
-.categoryCard {
-  background-color: #f9f9f9;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.categoryHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.categoryTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1a1a1a;
-}
-
-.totalVotes {
-  font-size: 1rem;
-  color: #555;
-  font-weight: 500;
-}
-
-.contestantList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.contestantCard {
-  background-color: #ffffff;
-  padding: 1rem;
-  flex: 1 1 150px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease;
-  text-align: center;
-	max-width: 40rem;
-	margin: 0 auto;
-}
-
-.contestantCard:hover {
-  transform: translateY(-4px);
-}
-
-.name {
-  font-weight: 500;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #222;
-}
-
-.votes {
-  font-size: 0.9rem;
-  color: #666;
 }
