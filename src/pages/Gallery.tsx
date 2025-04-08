@@ -46,8 +46,8 @@ const Gallery = () => {
 
         setLoading(false);
       } catch (error) {
+
         setError(error instanceof Error ? error.message : "An unknown error occurred");
-        setLoading(false);
       }
     };
 
@@ -94,13 +94,15 @@ const Gallery = () => {
   if (loading) {
     return <div className="w-full h-[50vh] flex flex-col items-center justify-center gap-6">
       <p>Loading images...</p>
-      {/* <PropagateLoader /> */}
       <BarLoader width={200} />
     </div>;
   }
 
   if (error) {
-    return <div className="w-full h-[50vh] flex flex-col items-center justify-center gap-3">
+    setLoading(false)
+
+    return 
+     <div className="w-full h-[50vh] flex flex-col items-center justify-center gap-3">
          <p> Error loading images: {error}</p>
           <BarLoader width={200} />
       </div>;
