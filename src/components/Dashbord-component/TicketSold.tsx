@@ -162,7 +162,7 @@ return (
     </div>
 
     {/* Ticket Table */}
-    <div className="w-full bg-white shadow-md overflow-x-auto" data-aos="fade-up"  data-aos-duration="3000">
+    <div className="w-full bg-white shadow-md overflow-x-auto " data-aos="fade-up"  data-aos-duration="3000">
       <table className="min-w-[900px] w-full border-collapse border border-gray-300">
         <thead>
           <tr className="bg-gray-200 text-left h-20 shadow text-xl">

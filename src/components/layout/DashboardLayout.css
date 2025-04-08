@@ -1,5 +1,11 @@
 @media (max-width:768px) {
     .sidebar{
         width: 40%;
+    
     }
+}
+
+
+.sidebar{
+    z-index: 999999;
 }

@@ -8,7 +8,7 @@ interface DashboardsideProps {
 }
 
 const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
-  <div className={`md:w-full w-52 h-full bg-gray-300 flex flex-col p-3  ${open ? "block md " : "hidden"} md:block`}>
+  <div className={`side md:w-full w-52 h-full bg-gray-300 flex flex-col p-3 z-50 ${open ? "block md " : "hidden"} md:block`}>
     {/* Logo Section */}
     <div className="w-[95%]  h-[20%] mb-4 flex items-center gap-3">
       <img src={logo} alt="Logo" className="md:w-7 w-7" />
