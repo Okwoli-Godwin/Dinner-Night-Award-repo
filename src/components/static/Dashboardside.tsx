@@ -8,7 +8,7 @@ interface DashboardsideProps {
 }
 
 const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
-  <div className={`md:w-full w-52 h-full bg-gray-300 flex flex-col p-3  ${open ? "block md " : "hidden"} md:block`}>
+  <div className={`side md:w-full w-52 h-full bg-gray-300 flex flex-col p-3 z-50 ${open ? "block md " : "hidden"} md:block`}>
     {/* Logo Section */}
     <div className="w-[95%]  h-[20%] mb-4 flex items-center gap-3">
       <img src={logo} alt="Logo" className="md:w-7 w-7" />
@@ -24,6 +24,8 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
             isActive ? "text-yellow-black shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
+
+        onClick={()=>(setOpen(false))}
       >
         {/* <LucideTicketsPlane /> */}
         <span className="font-bold">Ticket Sold Out</span>
@@ -35,6 +37,7 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
             isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
+        onClick={()=>(setOpen(false))}
       >
         <span className="font-bold">Set Businness</span>
       </NavLink>
@@ -46,6 +49,7 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
             isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
+        onClick={()=>(setOpen(false))}
       >
         <span className="font-bold">Create Category</span>
       </NavLink>
@@ -57,6 +61,7 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
             isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
+        onClick={()=>(setOpen(false))}
       >
         <span className="font-bold">See All Votes</span>
       </NavLink>
@@ -81,6 +86,7 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
             isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
+        onClick={()=>(setOpen(false))}
       >
         <span className="font-bold">Upload Images</span>
       </NavLink>
