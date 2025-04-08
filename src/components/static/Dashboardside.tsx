@@ -24,6 +24,8 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
             isActive ? "text-yellow-black shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
+
+        onClick={()=>(setOpen(false))}
       >
         {/* <LucideTicketsPlane /> */}
         <span className="font-bold">Ticket Sold Out</span>
@@ -35,6 +37,7 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
             isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
+        onClick={()=>(setOpen(false))}
       >
         <span className="font-bold">Set Businness</span>
       </NavLink>
@@ -46,6 +49,7 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
             isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
+        onClick={()=>(setOpen(false))}
       >
         <span className="font-bold">Create Category</span>
       </NavLink>
@@ -57,6 +61,7 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
             isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
+        onClick={()=>(setOpen(false))}
       >
         <span className="font-bold">See All Votes</span>
       </NavLink>
@@ -69,6 +74,7 @@ const Dashboardside: React.FC<DashboardsideProps> = ({ open, setOpen }) => (
             isActive ? "text-yellow-400 shadow shadow-yellow-600 bg-gray-400" : "text-black"
           }`
         }
+        onClick={()=>(setOpen(false))}
       >
         <span className="font-bold">Upload Images</span>
       </NavLink>
