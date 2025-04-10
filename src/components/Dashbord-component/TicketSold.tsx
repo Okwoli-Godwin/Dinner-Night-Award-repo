@@ -2,9 +2,11 @@
 
 
 import { useState, useEffect } from "react";
-import { ClipLoader } from "react-spinners";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import LoadingSpinner from "../loading/LoadingSpinner";
+import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
 
 
@@ -121,7 +123,7 @@ const TicketSold: React.FC = () => {
 
 
 if (Loading) {
-  return <div className="w-full h-screen bg-slate-50 flex items-center justify-center"><ClipLoader /></div>
+  return <LoadingSpinner/>
 }
 
 if (error) {
@@ -140,12 +142,14 @@ return (
 
     {/* Pagination Controls */}
     <div className="w-full mx-auto  text-gray-600">
-      <div className="flex items-center justify-between text-sm text-gray font-bold">
+      <div className="flex items-center justify-between text-sm text-gray font-bold ">
+        
         <a
           href="javascript:void(0)"
-          className="px-4 py-2 border rounded duration-150 hover:bg-gray-50 shadow shadow-gray-500"
+          className="px-4 py-2 border rounded duration-150 hover:bg-gray-50 shadow shadow-gray-500 flex items-center gap-3"
           onClick={handlePreviousPage}
         >
+          <FaArrowLeft />
           Previous
         </a>
         <div>
@@ -153,10 +157,11 @@ return (
         </div>
         <a
           href="javascript:void(0)"
-          className="px-4 py-2 border rounded duration-150 hover:bg-gray-50 shadow shadow-gray-500"
+          className="px-4 py-2 border rounded duration-150 hover:bg-gray-50 shadow shadow-gray-500  flex items-center gap-3"
           onClick={handleNextPage}
         >
           Next
+          <FaArrowRight />
         </a>
       </div>
     </div>
