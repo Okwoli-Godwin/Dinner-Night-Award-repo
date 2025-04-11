@@ -103,12 +103,10 @@
 // 		(currentPage - 1) * ITEMS_PER_PAGE,
 // 		currentPage * ITEMS_PER_PAGE
 //   );
-  
+
 //   if (loading) {
 //     return (<LoadingSpinner />);
 //   }
-
-  
 
 //   if (error) {
 //     return (
@@ -120,7 +118,7 @@
 
 // 	return (
 // 		<motion.div
-		
+
 // 		initial={{ opacity: 0, y: 20 }}
 // 		animate={{ opacity: 1, y: 0 }}
 // 		transition={{ duration: 0.5 }}
@@ -177,9 +175,6 @@
 // 				</div>
 // 			</div>
 
-			
-		
-
 // 			<div className={styles.cardGrid}>
 // 				{!loading &&
 // 					!error &&
@@ -224,80 +219,104 @@
 
 // export default SeeAllVotes;
 
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './SeeAllVotes.module.css';
 import toast from 'react-hot-toast';
 import LoadingSpinner from '../loading/LoadingSpinner';
 import { motion } from 'framer-motion';
+import VoteDetailModal from './VoteDetailModal';
 
 interface Contestant {
-  contestantName: string;
-  votes: number;
+	contestantName: string;
+	votes: number;
 }
 
 interface VoteCategory {
-  categoryName: string;
-  contestants: Contestant[];
+	categoryName: string;
+	contestants: Contestant[];
 }
 
 const SeeAllVote: React.FC = () => {
-  const [voteData, setVoteData] = useState<VoteCategory[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+	const [voteData, setVoteData] = useState<VoteCategory[]>([]);
+	const [loading, setLoading] = useState(true);
+	const [selectedCategory, setSelectedCategory] = useState<VoteCategory | null>(
+		null
+	);
 
-  useEffect(() => {
-    const fetchVotes = async () => {
-      try {
-        const response = await axios.get('https://our-lady-database.onrender.com/api/getVotesByCategory');
-        setVoteData(response.data);
-      } catch (err: any) {
+	const [error, setError] = useState('');
+
+	useEffect(() => {
+		const fetchVotes = async () => {
+			try {
+				const response = await axios.get(
+					'https://our-lady-database.onrender.com/api/getVotesByCategory'
+				);
+				setVoteData(response.data);
+			} catch (err: any) {
 				setError('Failed to fetch vote data');
 				toast.error(`${err.message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
+			} finally {
+				setLoading(false);
+			}
+		};
 
-    fetchVotes();
-  }, []);
+		fetchVotes();
+	}, []);
 
-  if (loading) return <LoadingSpinner />;
-  if (error) return <p className={styles.message}>{error}</p>;
+	if (loading) return <LoadingSpinner />;
+	if (error) return <p className={styles.message}>{error}</p>;
 
-  return (
+	if (selectedCategory) {
+		return (
+			<VoteDetailModal
+				category={selectedCategory}
+				onClose={() => setSelectedCategory(null)}
+			/>
+		);
+	}
+
+	return (
 		<motion.div
-				
-initial={{ opacity: 0, y: 20 }}
-animate={{ opacity: 1, y: 0 }}
-transition={{ duration: 0.5 }}
-			className={styles.container}>
-      <h2 className={styles.title}>Voting Summary</h2>
-      {voteData.map((category, index) => {
-        const totalVotes = category.contestants.reduce((sum, c) => sum + c.votes, 0);
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.5 }}
+			className={styles.container}
+		>
+			<h2 className={styles.title}>Voting Summary</h2>
+			{voteData.map((category, index) => {
+				const totalVotes = category.contestants.reduce(
+					(sum, c) => sum + c.votes,
+					0
+				);
 
-        return (
-          <div key={index} className={styles.categoryCard}>
-            <div className={styles.categoryHeader}>
-              <h3 className={styles.categoryTitle}>{category.categoryName}</h3>
-              <span className={styles.totalVotes}>Total Votes: {totalVotes}</span>
-            </div>
-            <div className={styles.contestantList}>
-              {category.contestants.map((contestant, i) => (
-                <div key={i} className={styles.contestantCard}>
-                  <p className={styles.name}>{contestant.contestantName}</p>
-                  <p className={styles.votes}>
-                    {contestant.votes} vote{contestant.votes !== 1 ? 's' : ''}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-      })}
-    </motion.div>
-  );
+				return (
+					<div
+						key={index}
+						className={styles.categoryCard}
+						onClick={() => setSelectedCategory(category)}
+					>
+						<div className={styles.categoryHeader}>
+							<h3 className={styles.categoryTitle}>{category.categoryName}</h3>
+							<span className={styles.totalVotes}>
+								Total Votes: {totalVotes}
+							</span>
+						</div>
+						<div className={styles.contestantList}>
+							{category.contestants.map((contestant, i) => (
+								<div key={i} className={styles.contestantCard}>
+									<p className={styles.name}>{contestant.contestantName}</p>
+									<p className={styles.votes}>
+										{contestant.votes} vote{contestant.votes !== 1 ? 's' : ''}
+									</p>
+								</div>
+							))}
+						</div>
+					</div>
+				);
+			})}
+		</motion.div>
+	);
 };
 
 export default SeeAllVote;
