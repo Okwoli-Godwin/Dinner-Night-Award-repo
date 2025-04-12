@@ -90,7 +90,7 @@ const VisitorStats = () => {
           : a._id.localeCompare(b._id)
       );
     } else {
-      // Sort by votes
+      // Sort by visitor
       sortedData.sort((a, b) =>
         sortOrder === 'desc' ? b.count - a.count : a.count - b.count
       );
@@ -125,7 +125,7 @@ const VisitorStats = () => {
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
       className={styles.container}>
-      <h2 className={styles.title}>All Votes</h2>
+      <h2 className={styles.title}>All Visitor</h2>
       <div className={styles.filterSection}>
         <div className={styles.flexnowrap}>
           <label className={styles.dateInput}>
@@ -171,7 +171,7 @@ const VisitorStats = () => {
               className={styles.sortButton}
               onClick={() => handleSort('votes')}
             >
-              <FaSort /> Sort by Votes
+              <FaSort /> Sort by Visitor
             </button>
           </div>
         </div>
@@ -186,7 +186,7 @@ const VisitorStats = () => {
           currentData.map((item) => (
             <div className={styles.card} key={item._id}>
               <strong>Date:</strong> {item._id} <br />
-              <strong>Votes:</strong> {item.count}
+              <strong>Visitor:</strong> {item.count}
             </div>
           ))}
       </div>

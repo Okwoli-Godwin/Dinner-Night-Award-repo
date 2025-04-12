@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { domAnimation, LazyMotion, m } from 'framer-motion';
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
+
 interface ContestantVotes {
 	contestantName: string;
 	votes: number;
@@ -295,7 +296,10 @@ const ContestantList: React.FC = () => {
 						>
 							<div className="p-6">
 								<div className="w-16 h-16 bg-green-100 rounded-full mb-4 flex items-center justify-center">
+									
+									{/* {contestant.length > 1 ? <img src={ticket1} alt="contestant" className="w-16 h-16 rounded-full" /> : null} */}
 									<span className="text-2xl text-green-600 font-semibold">
+
 										{contestant.charAt(0).toUpperCase()}
 									</span>
 								</div>
