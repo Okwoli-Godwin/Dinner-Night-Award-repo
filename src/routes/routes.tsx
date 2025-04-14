@@ -61,7 +61,7 @@ export const Element = createBrowserRouter([
 		element: <DashboardLayout />,
 		children: [
 			{
-				index: true,
+				path: 'ticket-sold',
 				element: <TicketSold />,
 			},
 			{

@@ -2,8 +2,8 @@
 
 
 import { useState, useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import AOS from 'aos';
+
 import LoadingSpinner from "../loading/LoadingSpinner";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
@@ -62,12 +62,7 @@ const TicketSold: React.FC = () => {
     fetchTickets();
   }, []);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 800, // animation duration in ms
-      once: true, // whether animation should happen only once
-    });
-  }, []);
+ 
   
 
 
@@ -167,7 +162,7 @@ return (
     </div>
 
     {/* Ticket Table */}
-    <div className="w-full bg-white shadow-md overflow-x-auto " data-aos="fade-up"  data-aos-duration="3000">
+    <div className="w-full bg-white shadow-md overflow-x-auto ">
       <table className="min-w-[900px] w-full border-collapse border border-gray-300">
         <thead>
           <tr className="bg-gray-200 text-left h-20 shadow text-xl">
