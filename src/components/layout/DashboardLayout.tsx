@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import 'aos/dist/aos.css';
-import "./DashboardLayout.css";
+import "./DashboardLayout.module.css"
 import ScrollToTop from "../../utils/ScrollToTop";
 import Dashboardside from "../static/Dashboardside";
 
