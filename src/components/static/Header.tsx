@@ -43,12 +43,14 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
+      <NavLink to="/">
       <div className={styles.logoContainer}>
         <img src={CyonLogo || "/placeholder.svg"} alt="Logo" className={styles.logo} />
         <Typography variant="h6" className={styles.brand}>
-          CYON OLR
+          Mega Youth
         </Typography>
       </div>
+      </NavLink>
 
       <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navMobileOpen : ""}`}>
         <NavLink

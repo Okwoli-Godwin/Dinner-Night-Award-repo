@@ -4,6 +4,7 @@ import "./DashboardLayout.css"
 import { useState, } from "react";
 import 'aos/dist/aos.css';
 import { AiOutlineMenuFold } from "react-icons/ai";
+import ScrollToTop from "../../utils/ScrollToTop";
 
 const DashboardLayout: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -11,7 +12,8 @@ const DashboardLayout: React.FC = () => {
   return (
   
 
-    <div className="w-full h-screen bg-black flex ">
+    <ScrollToTop>
+      <div className="w-full h-screen bg-black flex ">
       <div
         className={`sidebar ${open ? "absolute left-0 w-40 " : "hidden"
           } md:block md:w-[20%]  md:relative h-full  bg-black`} 
@@ -38,6 +40,7 @@ const DashboardLayout: React.FC = () => {
         </div>
       </div>
     </div>
+    </ScrollToTop>
   );
 };
 
