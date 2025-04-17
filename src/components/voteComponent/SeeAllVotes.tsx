@@ -256,6 +256,7 @@ const SeeAllVote: React.FC = () => {
 			} catch (err: any) {
 				setError('Failed to fetch vote data');
 				toast.error(`${err.message}`);
+				console.error(err.message)
 			} finally {
 				setLoading(false);
 			}
