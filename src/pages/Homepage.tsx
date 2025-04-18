@@ -37,12 +37,12 @@ const Homepage = () => {
 
       {/* Comment one Advert  */}
 
-      {/* <div className="md:mt-[75px] mt-[2rem]">
+      <div className="md:mt-[75px] mt-[2rem]">
         <Typography variant="h2" className="text-center mt-8">
           Business Advert
         </Typography>
         <AdvertCarousel isReverse={false} scrollSpeed={40} />
-      </div> */}
+      </div>
 
       <IntroSection />
       <EventCallToAction />

@@ -79,6 +79,7 @@ const Modal = ({ cards, onClose }: ModalProps) => {
                 href={`https://${cards.website}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ textDecoration: "none", color: "blue" }}
               >
                 {cards.website}
               </a>
