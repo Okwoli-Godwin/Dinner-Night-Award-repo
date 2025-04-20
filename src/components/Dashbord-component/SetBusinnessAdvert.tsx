@@ -8,6 +8,7 @@ const SetBusinessAdvert: React.FC = () => {
 
   const [formData, setFormData] = useState({
     name: '',
+    description: '',
     address: '',
     phoneNumber: '',
     website: '',
@@ -44,6 +45,7 @@ const SetBusinessAdvert: React.FC = () => {
       uploadData.append('website', formData.website);
       uploadData.append('email', formData.email);
       uploadData.append('image', formData.image);
+      uploadData.append('description', formData.description);
 
       await axios.post(
         'https://our-lady-database.onrender.com/api/addBusiness',
@@ -65,6 +67,7 @@ const SetBusinessAdvert: React.FC = () => {
         website: '',
         email: '',
         image: null,
+        description: '',
       });
 
       // Clear the file input value
@@ -89,6 +92,14 @@ const SetBusinessAdvert: React.FC = () => {
           name="name"
           placeholder="Business Name"
           value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="description"
+          placeholder="Business Description"
+          value={formData.description}
           onChange={handleChange}
           required
         />
