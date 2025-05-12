@@ -28,7 +28,7 @@ interface Business {
   address: string;
   location: string;
   website: string;
-  businessDescription?: string;
+  description?: string;
   socialMediaLink?: string;
   socialMedia?: [];
 }
@@ -64,6 +64,9 @@ const Modal = ({ cards, onClose }: ModalProps) => {
               loading="lazy"
             />
             <Typography variant="h3">{cards.name}</Typography>
+            <p>
+              <strong>Description:</strong> {cards.description}
+            </p>
             <p>
               <strong>Address:</strong> {cards.address}
             </p>

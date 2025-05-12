@@ -46,7 +46,7 @@ export default function AdvertCarousel({
       try {
         const response = await axios.get('https://our-lady-database.onrender.com/api/getall')
         const {businesses} = response.data
-       setBusinessDetails(businesses)
+        setBusinessDetails(businesses)
         
       } catch (err: any) {
         toast.error(`${err.message}`)
