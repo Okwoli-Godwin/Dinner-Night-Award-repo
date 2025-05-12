@@ -28,7 +28,7 @@ const SignIn = () => {
       setTimeout(() => {
         navigate("/dashboard");
       }, 3000);
-      console.log("Response:", response);
+     
     } catch (err) {
       if (axios.isAxiosError(err) && err.response) {
         const errorMessage = err.response.data.message || "An error occurred";

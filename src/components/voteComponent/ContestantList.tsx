@@ -74,8 +74,6 @@ const ContestantList: React.FC = () => {
 				const currentCategory = data.find((cat) => cat._id === categoryId);
 
 
-                console.log({data})
-                console.log(currentCategory)
 				if (!currentCategory) {
 					throw new Error('Category not found');
 				}
