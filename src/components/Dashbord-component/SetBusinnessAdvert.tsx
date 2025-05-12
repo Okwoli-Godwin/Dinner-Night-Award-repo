@@ -94,6 +94,7 @@ const SetBusinessAdvert: React.FC = () => {
           value={formData.name}
           onChange={handleChange}
           required
+          
         />
         <input
           type="text"
@@ -144,7 +145,7 @@ const SetBusinessAdvert: React.FC = () => {
           required
         />
 
-        <button type="submit" disabled={loading}>
+        <button className={styles.button} type="submit" disabled={loading}>
           {loading ? 'Submitting...' : 'Submit'}
         </button>
       </form>

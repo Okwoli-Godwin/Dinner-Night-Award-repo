@@ -31,13 +31,12 @@ const Gallery = () => {
 				const response = await fetch(
 					'https://our-lady-database.onrender.com/api/seeAll'
 				);
-				console.log(response);
-
+			
 				if (!response.ok) {
 					throw new Error('Failed to fetch gallery images');
 				}
 				const data: ApiResponse = await response.json();
-				console.log(data);
+			
 
 				// Flatten the images array and ensure uniqueness using a Set
 				const flatImages = data.images.flatMap((group: ImageGroup) =>

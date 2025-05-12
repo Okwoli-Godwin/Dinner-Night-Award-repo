@@ -93,13 +93,13 @@ const Ticket = () => {
 
   const verifyPayment = async (reference: string) => {
     try {
-      console.log("Verifying payment for reference:", reference)
+      // console.log("Verifying payment for reference:", reference)
 
       const response = await axios.get<VerificationResponse>(
         `https://our-lady-database.onrender.com/api/verify-payment/${reference}`,
       )
 
-      console.log("Payment verification response:", response.data)
+      // console.log("Payment verification response:", response.data)
 
       if (response.data.status === "success") {
         navigate(`/payment-confirmation?reference=${reference}`)
@@ -137,7 +137,7 @@ const Ticket = () => {
     setError(null)
 
     try {
-      console.log("Sending ticket data:", ticketData)
+      // console.log("Sending ticket data:", ticketData)
 
       const response = await axios.post<PaymentResponse>(
         "https://our-lady-database.onrender.com/api/buyTickets",
@@ -149,7 +149,7 @@ const Ticket = () => {
         },
       )
 
-      console.log("Purchase response:", response.data)
+      // console.log("Purchase response:", response.data)
 
       if (response.data.authorizationUrl) {
         window.location.href = response.data.authorizationUrl
