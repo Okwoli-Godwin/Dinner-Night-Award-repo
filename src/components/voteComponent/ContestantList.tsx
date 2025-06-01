@@ -263,7 +263,13 @@ const ContestantList: React.FC = () => {
                   {/* {contestant.length > 1 ? <img src={ticket1 || "/placeholder.svg"} alt="contestant" className="w-16 h-16 rounded-full" /> : null} */}
                   <span className="text-2xl text-green-600 font-semibold">{contestant.charAt(0).toUpperCase()}</span>
                 </div>
-                <h2 className="text-xl font-semibold text-gray-800 mb-2">{contestant}</h2>
+                <h2 className="text-xl font-semibold text-gray-800 mb-2">{contestant
+    .trim()
+    .toLowerCase()
+    .split(' ')
+    .filter(Boolean)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')}</h2>
                 <p className="text-gray-600 mb-4">{votes[contestant] || 0} votes</p>
                 <button
                   onClick={() => handleVote(contestant)}
