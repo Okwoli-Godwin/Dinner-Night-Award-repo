@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
                     <div className="flex-col flex items-center">
                       <FaLocationDot color="#fff" size={24}/>
                       <h3 className={styles.date}>Our Lady of the Rosary Catholic Church</h3>
-                      <h3 className={styles.month}>1/3 Rasaki Street, Olodi-Apapa, Lagos</h3>
+                      <h3 className={styles.month}>1/3 Rasaki Street, off Alakoto Market</h3>
                     </div>
                     <div className="flex-col flex items-center">
                       <MdAccessTimeFilled color="#fff" size={24}/>
