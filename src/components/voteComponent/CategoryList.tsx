@@ -336,7 +336,7 @@ const BackgroundMedia: React.FC<{ media: BackgroundMedia; categoryName: string }
           loop
           muted
           playsInline
-          playsinline="true"
+          // playsinline="true"
           webkit-playsinline="true"
           aria-label={`${categoryName} category background video`}
         />
