@@ -38,6 +38,14 @@ interface BackgroundMedia {
   url: string
 }
 
+// Function to detect iOS
+const isIOS = (): boolean => {
+  if (typeof window === "undefined") return false
+
+  const userAgent = window.navigator.userAgent.toLowerCase()
+  return /iphone|ipad|ipod|macintosh/.test(userAgent) && "ontouchend" in document
+}
+
 // Function to get a background media (image or video) based on category
 const getCategoryBackground = (category: Category): BackgroundMedia => {
   // Direct mapping of category names to videos
@@ -328,6 +336,8 @@ const BackgroundMedia: React.FC<{ media: BackgroundMedia; categoryName: string }
           loop
           muted
           playsInline
+          playsinline="true"
+          webkit-playsinline="true"
           aria-label={`${categoryName} category background video`}
         />
       </div>
@@ -348,6 +358,12 @@ const CategoryList: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
+  const [isIOSDevice, setIsIOSDevice] = useState<boolean>(false)
+
+  useEffect(() => {
+    // Check if the device is iOS
+    setIsIOSDevice(isIOS())
+  }, [])
 
   const fetchCategories = async () => {
     try {
@@ -376,14 +392,14 @@ const CategoryList: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen bg-gradient-to-br from-yellow-50 via-white to-green-50">
-      <div className="flex sm:flex-row justify-between items-start sm:items-center mb-8 space-y-4 sm:space-y-0">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 space-y-4 sm:space-y-0">
         <div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Voting Categories</h1>
           <p className="text-gray-600">Select a category to vote in</p>
         </div>
         <motion.button
           onClick={() => navigate("/")}
-          className="flex gap-2 items-center sm:w-auto px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          className="flex gap-2 items-center px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -395,29 +411,47 @@ const CategoryList: React.FC = () => {
         <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-yellow-700">{error}</div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      {/* Add a style tag to force single column on iOS devices */}
+      {isIOSDevice && (
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+            @media screen and (min-width: 640px) {
+              .ios-grid-override {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `,
+          }}
+        />
+      )}
+
+      <div
+        className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 ${isIOSDevice ? "ios-grid-override" : ""}`}
+      >
         {categories.map((category, index) => {
           const backgroundMedia = getCategoryBackground(category)
 
           return (
             <motion.div
               key={category._id}
-              className="group rounded-xl shadow-md overflow-hidden h-48 transition-all duration-300 hover:shadow-lg relative"
+              className="group rounded-xl shadow-md overflow-hidden h-48 transition-all duration-300 hover:shadow-lg relative touch-manipulation w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               onClick={() => navigate(`/vote/contestantslist/${category._id}`)}
+              style={{ WebkitTapHighlightColor: "transparent" }}
             >
               <BackgroundMedia media={backgroundMedia} categoryName={category.name} />
 
               <div className="absolute inset-0 w-full h-full p-6 cursor-pointer bg-gradient-to-t from-black/70 to-black/30 hover:from-black/80 hover:to-black/40 transition-all duration-300 flex flex-col justify-end">
                 <div className="flex items-center mb-1">
                   {backgroundMedia.type === "video" ? (
-                    <MdVideocam className="text-green-400 mr-2" size={18} />
+                    <MdVideocam className="text-green-400 mr-2 flex-shrink-0" size={18} />
                   ) : (
-                    <MdImage className="text-green-400 mr-2" size={18} />
+                    <MdImage className="text-green-400 mr-2 flex-shrink-0" size={18} />
                   )}
-                  <h2 className="text-2xl font-bold text-white">{category.name}</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-white truncate">{category.name}</h2>
                 </div>
                 <p className="text-gray-200">{category.contestants.length} contestants</p>
               </div>
